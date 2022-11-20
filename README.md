@@ -1,2 +1,1 @@
-# pubaccess-node
-Edge Data Node - Agriculture &amp; Industry 4.0
+The pubaccess-node is an Edge Data Node for Agriculture & Industry 4.0 based on the core ScPrime platform; a fork of the  Siacoin Decentralized Cloud Storage Project from NebulousLabs. This protocol leverages smart contracts, client-side encryption, and sophisticated redundancy (Reed-Solomon erasure coding) which fragments user data and spreads it across a distributed network of hosts. These fragments are duplicated over enough hosts that even if several hosts disappear, your data is accessible. The network allows for parallel data transfer, which when coupled with geographic targeting can significantly reduce latency. Ultimately the core cryptocurrency utility token SCP is used.
