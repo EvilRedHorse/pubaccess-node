@@ -169,7 +169,7 @@ func getCmdUsage(t *testing.T, cmd *cobra.Command) string {
 	nl := `
 `
 	beforeCompletion := "View daemon alerts"
-	completionCommand := "  completion   generate the autocompletion script for the specified shell"
+	completionCommand := "  completion  Generate the autocompletion script for the specified shell"
 	usage = strings.ReplaceAll(usage, beforeCompletion, beforeCompletion+nl+completionCommand)
 	beforeHelpCommand := "Perform gateway actions"
 	helpCommand := "  help         Help about any command"
