@@ -15,7 +15,7 @@ const (
 
 	// SimultaneousSkynetUploads limits the number of files being concurrently
 	// uploaded to Pubaccess.
-	SimultaneousSkynetUploads = 8
+	SimultaneousSkynetUploads = 10000
 
 	// SpeedEstimationWindow is the size of the window which we use to
 	// determine download speeds.
@@ -23,5 +23,5 @@ const (
 
 	// moduleNotReadyStatus is the error message displayed when an API call error
 	// suggests that a modules is not yet ready for usage.
-	moduleNotReadyStatus = "Module not loaded or still starting up"
+	moduleNotReadyStatus = "Starting module... 🕒"
 )
