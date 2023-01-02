@@ -12,7 +12,7 @@ import (
 const (
 	// persistVersion defines the ScPrime version that the persistence was
 	// last updated
-	persistVersion = "1.4.2"
+	persistVersion = "1.6.0"
 )
 
 const (
@@ -35,7 +35,7 @@ var (
 	// DefaultDataPieces is the number of data pieces per erasure-coded chunk
 	DefaultDataPieces = build.Select(build.Var{
 		Dev:      1,
-		Standard: 10,
+		Standard: 4,
 		Testing:  1,
 	}).(int)
 
@@ -43,8 +43,8 @@ var (
 	// chunk
 	DefaultParityPieces = build.Select(build.Var{
 		Dev:      1,
-		Standard: 20,
-		Testing:  4,
+		Standard: 8,
+		Testing:  2,
 	}).(int)
 
 	// RepairThreshold defines the threshold at which the renter decides to
