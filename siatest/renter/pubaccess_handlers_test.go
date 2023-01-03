@@ -7,10 +7,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"gitlab.com/scpcorp/ScPrime/node"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	"gitlab.com/scpcorp/ScPrime/siatest"
-	"gitlab.com/scpcorp/ScPrime/siatest/dependencies"
+	"github.com/EvilRedHorse/pubaccess-node/node"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	"github.com/EvilRedHorse/pubaccess-node/siatest"
+	"github.com/EvilRedHorse/pubaccess-node/siatest/dependencies"
 )
 
 // TestSkynetSkylinkHandlerGET tests the behaviour of SkynetSkylinkHandlerGET

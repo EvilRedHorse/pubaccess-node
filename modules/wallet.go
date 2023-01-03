@@ -10,8 +10,8 @@ import (
 
 	mnemonics "gitlab.com/NebulousLabs/entropy-mnemonics"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 const (

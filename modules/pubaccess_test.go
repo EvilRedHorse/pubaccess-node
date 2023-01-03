@@ -6,8 +6,8 @@ import (
 
 // TestSkyfileMetadata_ForPath tests the behaviour of the ForPath method.
 func TestSkyfileMetadata_ForPath(t *testing.T) {
-	filePath1 := "/foo/file1.txt"
-	filePath2 := "/foo/file2.txt"
+	filePath1 := "/bar/file1.txt"
+	filePath2 := "/bar/file2.txt"
 	filePath3 := "/file3.txt"
 	filePath4 := "/bar/file4.txt"
 	filePath5 := "/bar/baz/file5.txt"
@@ -38,7 +38,7 @@ func TestSkyfileMetadata_ForPath(t *testing.T) {
 	}
 
 	// Find files by their directory.
-	subMeta, isSubFile, offset, size = fullMeta.ForPath("/foo")
+	subMeta, isSubFile, offset, size = fullMeta.ForPath("/bar")
 	subfile1, exists1 := subMeta.Subfiles[filePath1]
 	subfile2, exists2 := subMeta.Subfiles[filePath2]
 	// Expect to find files 1 and 2 and nothing else.
@@ -100,24 +100,24 @@ func TestSkyfileMetadata_ForPath(t *testing.T) {
 
 	// Find files by their directory, even if it contains a trailing slash.
 	// This is a regression test.
-	subMeta, _, _, _ = fullMeta.ForPath("/foo/")
+	subMeta, _, _, _ = fullMeta.ForPath("/bar/")
 	if _, exists := subMeta.Subfiles[filePath1]; !exists {
 		t.Fatal(`Expected to find a file by its directory, even when followed by a "/".`)
 	}
-	subMeta, _, _, _ = fullMeta.ForPath("foo/")
+	subMeta, _, _, _ = fullMeta.ForPath("bar/")
 	if _, exists := subMeta.Subfiles[filePath1]; !exists {
 		t.Fatal(`Expected to find a file by its directory, even when missing leading "/" and followed by a "/".`)
 	}
 
 	// Find files by their directory, even if it's missing its leading slash.
 	// This is a regression test.
-	subMeta, _, _, _ = fullMeta.ForPath("foo")
+	subMeta, _, _, _ = fullMeta.ForPath("bar")
 	if _, exists := subMeta.Subfiles[filePath1]; !exists {
 		t.Fatal(`Expected to find a file by its directory, even when it's missing its leading "/".`)
 	}
 
 	// Try to find a file in an empty metadata struct.
-	subMeta, _, offset, _ = emptyMeta.ForPath("foo")
+	subMeta, _, offset, _ = emptyMeta.ForPath("bar")
 	if len(subMeta.Subfiles) != 0 {
 		t.Fatal(`Expected to not find any files, found`, len(subMeta.Subfiles))
 	}

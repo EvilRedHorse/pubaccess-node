@@ -18,11 +18,11 @@ import (
 	"gitlab.com/NebulousLabs/siamux"
 	"gitlab.com/NebulousLabs/threadgroup"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/hostdb/hosttree"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/hostdb/hosttree"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 var (

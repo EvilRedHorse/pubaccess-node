@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"gitlab.com/NebulousLabs/encoding"
-	"gitlab.com/scpcorp/ScPrime/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
 )
 
 // TestCalculateCoinbase probes the CalculateCoinbase function. The test code

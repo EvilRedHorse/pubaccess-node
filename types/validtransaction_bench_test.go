@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"gitlab.com/NebulousLabs/encoding"
-	"gitlab.com/scpcorp/ScPrime/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
 )
 
 // BenchmarkStandaloneValid times how long it takes to verify a single

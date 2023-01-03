@@ -5,15 +5,15 @@ import (
 	"testing"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 
 	"gitlab.com/NebulousLabs/fastrand"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/node"
-	"gitlab.com/scpcorp/ScPrime/node/api/client"
-	"gitlab.com/scpcorp/ScPrime/siatest"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/node"
+	"github.com/EvilRedHorse/pubaccess-node/node/api/client"
+	"github.com/EvilRedHorse/pubaccess-node/siatest"
 )
 
 // TestDaemonAPIPassword makes sure that the daemon rejects requests with the

@@ -11,9 +11,9 @@ import (
 	"gitlab.com/NebulousLabs/errors"
 	"gitlab.com/NebulousLabs/fastrand"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/node/api"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/node/api"
 )
 
 // AddMultipartFile is a helper function to add a file to the multipart form-

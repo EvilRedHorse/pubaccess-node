@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 func TestCalculateProofRanges(t *testing.T) {

@@ -3,9 +3,9 @@ package transactionpool
 import (
 	"gitlab.com/NebulousLabs/encoding"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // updateSubscribersTransactions sends a new transaction pool update to all

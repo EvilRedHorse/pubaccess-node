@@ -6,8 +6,8 @@ import (
 	"time"
 	"unsafe"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // TestMinerGET checks the GET call to the /miner endpoint.

@@ -10,9 +10,9 @@ import (
 	"time"
 
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 	bolt "go.etcd.io/bbolt"
 )
 

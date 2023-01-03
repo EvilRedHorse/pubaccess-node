@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 // MaxEncodedNetAddressLength is the maximum length of a NetAddress encoded

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/persist"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
 )
 
 // upgradeFromV120ToV143 is an upgrade layer that aids the integration of the

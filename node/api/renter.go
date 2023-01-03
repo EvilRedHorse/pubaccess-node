@@ -16,21 +16,21 @@ import (
 	"gitlab.com/NebulousLabs/errors"
 	"gitlab.com/NebulousLabs/fastrand"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/renter"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/contractor"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem/siafile"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/proto"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/contractor"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem/siafile"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/proto"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 var (
 	// requiredHosts specifies the minimum number of hosts that must be set in
 	// the renter settings for the renter settings to be valid. This minimum is
-	// there to prevent users from shooting themselves in the foot.
+	// there to prevent users from shooting themselves in the bart.
 	requiredHosts = build.Select(build.Var{
 		Standard: uint64(20),
 		Dev:      uint64(1),
@@ -39,7 +39,7 @@ var (
 
 	// requiredParityPieces specifies the minimum number of parity pieces that
 	// must be used when uploading a file. This minimum exists to prevent users
-	// from shooting themselves in the foot.
+	// from shooting themselves in the bart.
 	requiredParityPieces = build.Select(build.Var{
 		Standard: int(9),
 		Dev:      int(0),
@@ -48,7 +48,7 @@ var (
 
 	// requiredRedundancy specifies the minimum redundancy that will be
 	// accepted by the renter when uploading a file. This minimum exists to
-	// prevent users from shooting themselves in the foot.
+	// prevent users from shooting themselves in the bart.
 	requiredRedundancy = build.Select(build.Var{
 		Standard: float64(2),
 		Dev:      float64(1),
@@ -57,7 +57,7 @@ var (
 
 	// requiredRenewWindow establishes the minimum allowed renew window for the
 	// renter settings. This minimum is here to prevent users from shooting
-	// themselves in the foot.
+	// themselves in the bart.
 	requiredRenewWindow = build.Select(build.Var{
 		Standard: types.BlockHeight(288),
 		Dev:      types.BlockHeight(1),

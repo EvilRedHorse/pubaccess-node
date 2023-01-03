@@ -7,11 +7,11 @@ import (
 	"reflect"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/proto"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/proto"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 
 	"gitlab.com/NebulousLabs/fastrand"
 	"gitlab.com/NebulousLabs/ratelimit"
@@ -77,7 +77,7 @@ func TestSaveLoad(t *testing.T) {
 	}
 
 	c.oldContracts = map[types.FileContractID]modules.RenterContract{
-		{0}: {ID: types.FileContractID{0}, HostPublicKey: types.SiaPublicKey{Key: []byte("foo")}},
+		{0}: {ID: types.FileContractID{0}, HostPublicKey: types.SiaPublicKey{Key: []byte("bar")}},
 		{1}: {ID: types.FileContractID{1}, HostPublicKey: types.SiaPublicKey{Key: []byte("bar")}},
 		{2}: {ID: types.FileContractID{2}, HostPublicKey: types.SiaPublicKey{Key: []byte("baz")}},
 	}

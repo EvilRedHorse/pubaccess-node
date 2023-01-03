@@ -8,7 +8,7 @@ import (
 	"runtime"
 	"strconv"
 
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 func interfaceify(strs []string) []interface{} {

@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // TestSiaMuxCompat verifies the SiaMux is initialized in compatibility mode

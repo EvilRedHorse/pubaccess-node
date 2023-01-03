@@ -10,10 +10,10 @@ import (
 
 	"github.com/spf13/cobra"
 	"gitlab.com/NebulousLabs/errors"
-	"gitlab.com/scpcorp/ScPrime/node"
-	"gitlab.com/scpcorp/ScPrime/node/api/client"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	"gitlab.com/scpcorp/ScPrime/siatest"
+	"github.com/EvilRedHorse/pubaccess-node/node"
+	"github.com/EvilRedHorse/pubaccess-node/node/api/client"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	"github.com/EvilRedHorse/pubaccess-node/siatest"
 )
 
 // outputCatcher is a helper struct enabling to catch stdout and stderr during

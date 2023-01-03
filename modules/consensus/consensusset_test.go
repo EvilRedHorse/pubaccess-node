@@ -6,14 +6,14 @@ import (
 
 	"gitlab.com/NebulousLabs/encoding"
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/gateway"
-	"gitlab.com/scpcorp/ScPrime/modules/miner"
-	"gitlab.com/scpcorp/ScPrime/modules/transactionpool"
-	"gitlab.com/scpcorp/ScPrime/modules/wallet"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/gateway"
+	"github.com/EvilRedHorse/pubaccess-node/modules/miner"
+	"github.com/EvilRedHorse/pubaccess-node/modules/transactionpool"
+	"github.com/EvilRedHorse/pubaccess-node/modules/wallet"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 
 	bolt "go.etcd.io/bbolt"
 )

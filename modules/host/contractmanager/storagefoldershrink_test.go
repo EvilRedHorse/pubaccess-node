@@ -8,8 +8,8 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // TestShrinkStorageFolder checks that a storage folder can be successfully

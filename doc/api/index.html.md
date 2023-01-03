@@ -4,7 +4,7 @@ title: ScPrime API Documentation
 language_tabs: # must be one of https://git.io/vQNgJ
   - go
 
-toc_footers:
+toc_barters:
   - <a href='https://scpri.me'>The Official ScPrime Website
   - <a href='https://gitlab.com/scpcorp/ScPrime'>ScPrime on GitLab</a>
 
@@ -133,7 +133,7 @@ string. The flag does not enforce authentication on all API endpoints. Only
 endpoints that expose sensitive information or modify state require
 authentication.
 
-For example, if the API password is "foobar" the request header should include
+For example, if the API password is "barbar" the request header should include
 
 `Authorization: Basic OmZvb2Jhcg==`
 
@@ -1815,7 +1815,7 @@ Gets a list of folders tracked by the host's storage manager.
 {
   "folders": [
     {
-      "path":              "/home/foo/bar", // string
+      "path":              "/home/bar/bar", // string
       "capacity":          50000000000,     // bytes
       "capacityremaining": 100000,          // bytes
 
@@ -1851,7 +1851,7 @@ Number of successful read & write operations.
 > curl example  
 
 ```go
-curl -A "ScPrime-Agent" -u "":<apipassword> --data "path=foo/bar&size=1000000000000" "localhost:4280/host/storage/folders/add"
+curl -A "ScPrime-Agent" -u "":<apipassword> --data "path=bar/bar&size=1000000000000" "localhost:4280/host/storage/folders/add"
 ```
 
 adds a storage folder to the manager. The manager may not check that there is
@@ -1880,7 +1880,7 @@ responses](#standard-responses).
 > curl example  
 
 ```go
-curl -A "ScPrime-Agent" -u "":<apipassword> --data "path=foo/bar&force=false" "localhost:4280/host/storage/folders/remove"
+curl -A "ScPrime-Agent" -u "":<apipassword> --data "path=bar/bar&force=false" "localhost:4280/host/storage/folders/remove"
 ```
 
 Remove a storage folder from the manager. All storage on the folder will be
@@ -1909,7 +1909,7 @@ responses](#standard-responses).
 > curl example  
 
 ```sh
-curl -A "ScPrime-Agent" -u "":<apipassword> --data "path=foo/bar&newsize=1000000000000" "localhost:4280/host/storage/folders/resize"
+curl -A "ScPrime-Agent" -u "":<apipassword> --data "path=bar/bar&newsize=1000000000000" "localhost:4280/host/storage/folders/resize"
 ```
 
 Grows or shrinks a storage file in the manager. The manager may not check that
@@ -2940,7 +2940,7 @@ Lists the backups that have been uploaded to hosts.
 ```go
 [
   {
-    "name": "foo",                             // string
+    "name": "bar",                             // string
     "UID": "00112233445566778899aabbccddeeff", // string
     "creationdate": 1234567890,                // Unix timestamp
     "size": 8192                               // bytes
@@ -3254,7 +3254,7 @@ relative to 'home/user/'.
       "mostrecentmodtime":  "2018-09-23T08:00:00.000000000+04:00" // timestamp
       "numfiles":           3,        // uint64
       "numsubdirs":         2,        // uint64
-      "siapath":            "foo/bar" // string
+      "siapath":            "bar/bar" // string
       "stuckhealth":        1.0,      // float64
     }
   ],
@@ -3378,7 +3378,7 @@ header's 'ID' field.
   "destinationtype": "file",                      // string
   "length":          8192,                        // bytes
   "offset":          2000,                        // bytes
-  "siapath":         "foo/bar.txt",               // string
+  "siapath":         "bar/bar.txt",               // string
 
   "completed":           true,                    // boolean
   "endtime":             "2009-11-10T23:10:00Z",  // RFC 3339 time
@@ -3455,7 +3455,7 @@ Lists all files in the download queue.
       "destinationtype": "file",                      // string
       "length":          8192,                        // bytes
       "offset":          2000,                        // bytes
-      "siapath":         "foo/bar.txt",               // string
+      "siapath":         "bar/bar.txt",               // string
 
       "completed":           true,                    // boolean
       "endtime":             "2009-11-10T23:10:00Z",  // RFC 3339 time
@@ -3624,7 +3624,7 @@ lists the status of all files.
       "expiration":       60000,                // block height
       "filesize":         8192,                 // bytes
       "health":           0.5,                  // float64
-      "localpath":        "/home/foo/bar.txt",  // string
+      "localpath":        "/home/bar/bar.txt",  // string
       "maxhealth":        0.0,                  // float64  
       "maxhealthpercent": 100%,                 // float64
       "modtime":          12578940002019-02-20T17:46:20.34810935+01:00,  // timestamp
@@ -3633,7 +3633,7 @@ lists the status of all files.
       "recoverable":      true,                 // boolean
       "redundancy":       5,                    // float64
       "renewing":         true,                 // boolean
-      "siapath":          "foo/bar.txt",        // string
+      "siapath":          "bar/bar.txt",        // string
       "stuck":            false,                // bool
       "stuckhealth":      0.0,                  // float64
       "uploadedbytes":    209715200,            // total bytes uploaded
@@ -5629,7 +5629,7 @@ the most common choice when picking a dictionary.
   "addressesremaining": 2500,
   "allseeds":           [
     "hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello",
-    "foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo",
+    "bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar",
   ]
 }
 ```

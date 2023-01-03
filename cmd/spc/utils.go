@@ -19,11 +19,11 @@ import (
 	"gitlab.com/NebulousLabs/encoding"
 	mnemonics "gitlab.com/NebulousLabs/entropy-mnemonics"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/renter"
-	"gitlab.com/scpcorp/ScPrime/siatest"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter"
+	"github.com/EvilRedHorse/pubaccess-node/siatest"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 var (

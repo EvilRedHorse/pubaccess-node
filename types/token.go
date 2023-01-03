@@ -4,7 +4,7 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
 )
 
 const (

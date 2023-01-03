@@ -9,9 +9,9 @@ import (
 	"time"
 
 	"gitlab.com/NebulousLabs/encoding"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/node/api"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/node/api"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // ConsensusGet requests the /consensus api resource

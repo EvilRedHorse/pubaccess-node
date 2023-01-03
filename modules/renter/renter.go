@@ -38,18 +38,18 @@ import (
 
 	"gitlab.com/scpcorp/writeaheadlog"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/contractor"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/hostdb"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/pubaccessblacklist"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/pubaccessportals"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	"gitlab.com/scpcorp/ScPrime/pubaccesskey"
-	siasync "gitlab.com/scpcorp/ScPrime/sync"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/contractor"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/hostdb"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/pubaccessblacklist"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/pubaccessportals"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	"github.com/EvilRedHorse/pubaccess-node/pubaccesskey"
+	siasync "github.com/EvilRedHorse/pubaccess-node/sync"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 var (

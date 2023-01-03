@@ -15,9 +15,9 @@ import (
 
 	"github.com/starius/api2"
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules/host/tokenstorage"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules/host/tokenstorage"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // TokenStorage represent communication between api and token storage.

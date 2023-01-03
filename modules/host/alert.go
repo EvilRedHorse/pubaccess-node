@@ -1,6 +1,6 @@
 package host
 
-import "gitlab.com/scpcorp/ScPrime/modules"
+import "github.com/EvilRedHorse/pubaccess-node/modules"
 
 // Alerts implements the modules.Alerter interface for the host.
 func (h *Host) Alerts() (crit, err, warn []modules.Alert) {

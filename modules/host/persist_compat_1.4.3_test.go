@@ -10,13 +10,13 @@ import (
 
 	"gitlab.com/NebulousLabs/errors"
 	"gitlab.com/NebulousLabs/siamux"
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/consensus"
-	"gitlab.com/scpcorp/ScPrime/modules/gateway"
-	"gitlab.com/scpcorp/ScPrime/modules/transactionpool"
-	"gitlab.com/scpcorp/ScPrime/modules/wallet"
-	"gitlab.com/scpcorp/ScPrime/persist"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/consensus"
+	"github.com/EvilRedHorse/pubaccess-node/modules/gateway"
+	"github.com/EvilRedHorse/pubaccess-node/modules/transactionpool"
+	"github.com/EvilRedHorse/pubaccess-node/modules/wallet"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
 )
 
 const (

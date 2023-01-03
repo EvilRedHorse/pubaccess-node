@@ -11,8 +11,8 @@ import (
 
 	"gitlab.com/NebulousLabs/encoding"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 const dummyNode = "111.111.111.111:1111"
@@ -35,10 +35,10 @@ func TestAddNode(t *testing.T) {
 	if err := g.addNode(dummyNode); err != errNodeExists {
 		t.Error("addNode added duplicate node")
 	}
-	if err := g.addNode("foo"); err == nil {
+	if err := g.addNode("bar"); err == nil {
 		t.Error("addNode added unroutable address")
 	}
-	if err := g.addNode("foo:4281"); err == nil {
+	if err := g.addNode("bar:4281"); err == nil {
 		t.Error("addNode added a non-IP address")
 	}
 	if err := g.addNode("[::]:4281"); err == nil {

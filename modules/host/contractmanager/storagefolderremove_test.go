@@ -7,8 +7,8 @@ import (
 	"sync"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // TestRemoveStorageFolder tries removing a storage folder that has no sectors

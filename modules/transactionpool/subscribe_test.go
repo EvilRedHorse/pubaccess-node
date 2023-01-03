@@ -3,8 +3,8 @@ package transactionpool
 import (
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // mockSubscriber receives transactions from the transaction pool it is

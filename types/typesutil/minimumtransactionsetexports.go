@@ -1,7 +1,7 @@
 package typesutil
 
 import (
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // MinimumTransactionSet takes two transaction sets as input and returns a

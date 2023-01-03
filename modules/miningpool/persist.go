@@ -6,10 +6,10 @@ import (
 
 	"github.com/sasha-s/go-deadlock"
 
-	"gitlab.com/scpcorp/ScPrime/config"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/config"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // persistence is the data that is kept when the pool is restarted.

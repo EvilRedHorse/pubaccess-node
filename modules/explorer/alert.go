@@ -1,6 +1,6 @@
 package explorer
 
-import "gitlab.com/scpcorp/ScPrime/modules"
+import "github.com/EvilRedHorse/pubaccess-node/modules"
 
 // Alerts implements the modules.Alerter interface for the explorer.
 func (e *Explorer) Alerts() (crit, err, warn []modules.Alert) {

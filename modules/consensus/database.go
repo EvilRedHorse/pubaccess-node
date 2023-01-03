@@ -11,8 +11,8 @@ import (
 	"gitlab.com/NebulousLabs/encoding"
 	bolt "go.etcd.io/bbolt"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/persist"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
 )
 
 var (

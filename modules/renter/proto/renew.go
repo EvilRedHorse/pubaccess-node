@@ -5,11 +5,11 @@ import (
 
 	"gitlab.com/NebulousLabs/errors"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
-	"gitlab.com/scpcorp/ScPrime/types/typesutil"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
+	"github.com/EvilRedHorse/pubaccess-node/types/typesutil"
 )
 
 // Renew negotiates a new contract for data already stored with a host, and

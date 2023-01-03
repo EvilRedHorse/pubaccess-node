@@ -57,7 +57,7 @@ pubfile.
 - fixed bug in rotation of fingerprint buckets
 - fix issue where priority tasks could wait for low priority tasks to complete
 - Fix panic in backup code due to not using `newJobGeneric`
-- Public access filenames are now validated when uploading. Previously you could upload files called e.g. "../foo" which would be inaccessible.
+- Public access filenames are now validated when uploading. Previously you could upload files called e.g. "../bar" which would be inaccessible.
 - The Pubaccesskey encryption API docs were updated to fix some discrepancies. In particular, the pubaccesskeyid section was removed.
 - The createpubaccesskey endpoint was fixed as it was not returning the full Pubaccesskey that was created.
 - integrade download cooldown system into download jobs

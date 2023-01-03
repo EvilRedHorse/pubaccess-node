@@ -10,11 +10,11 @@ import (
 
 	"gitlab.com/NebulousLabs/errors"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem/siadir"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem/siafile"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem/siadir"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem/siafile"
 )
 
 // bubbleStatus indicates the status of a bubble being executed on a

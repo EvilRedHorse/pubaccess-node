@@ -12,7 +12,7 @@ SiaFile was built with the requirement that all reads and writes must be able
 to happen in constant time, knowing only the offset of the logical data
 within the SiaFile. To achieve that, all the data is page-aligned which also
 improves disk performance. Overall the SiaFile package is designed to
-minimize disk I/O operations and to keep the memory footprint as small as
+minimize disk I/O operations and to keep the memory bartprint as small as
 possible without sacrificing performance.
 
 ## Benchmarks

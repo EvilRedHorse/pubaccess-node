@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/siatest/dependencies"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/siatest/dependencies"
 )
 
 // updateSiaDirHealth is a helper method to update the health and the aggregate

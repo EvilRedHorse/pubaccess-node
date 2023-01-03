@@ -1,6 +1,6 @@
 package transactionpool
 
-import "gitlab.com/scpcorp/ScPrime/modules"
+import "github.com/EvilRedHorse/pubaccess-node/modules"
 
 // Alerts implements the modules.Alerter interface for the transactionpool.
 func (tpool *TransactionPool) Alerts() (crit, err, warn []modules.Alert) {

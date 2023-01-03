@@ -3,8 +3,8 @@ package client
 import (
 	"gitlab.com/NebulousLabs/encoding"
 
-	"gitlab.com/scpcorp/ScPrime/node/api"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/node/api"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // MinerGet requests the /miner endpoint's resources.

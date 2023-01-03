@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"gitlab.com/NebulousLabs/errors"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // TestBudget tests the RPCBudget helper type.

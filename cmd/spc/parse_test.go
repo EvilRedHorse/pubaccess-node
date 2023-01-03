@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // TestParseFileSize probes the parseFilesize function

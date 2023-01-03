@@ -12,10 +12,10 @@ import (
 
 	"gitlab.com/NebulousLabs/threadgroup"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	siasync "gitlab.com/scpcorp/ScPrime/sync"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	siasync "github.com/EvilRedHorse/pubaccess-node/sync"
 )
 
 // newTestingGateway returns a gateway ready to use in a testing environment.
@@ -155,7 +155,7 @@ func TestNew(t *testing.T) {
 	if _, err := New("localhost:0", false, ""); err == nil {
 		t.Fatal("expecting persistDir error, got nil")
 	}
-	if g, err := New("foo", false, build.TempDir("gateway", t.Name()+"1")); err == nil {
+	if g, err := New("bar", false, build.TempDir("gateway", t.Name()+"1")); err == nil {
 		t.Fatal("expecting listener error, got nil", g.myAddr)
 	}
 	// create corrupted nodes.json

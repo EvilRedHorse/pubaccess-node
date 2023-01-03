@@ -3,8 +3,8 @@ package gateway
 import (
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // Constants related to the gateway's alerts.

@@ -3,8 +3,8 @@ package renter
 import (
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // TestCheckFetchBackupsGouging checks that the fetch backups price gouging

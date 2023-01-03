@@ -1,7 +1,7 @@
 package dependencies
 
 import (
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // DependencyDoNotAcceptTxnSet will not accept a transaction set.

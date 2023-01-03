@@ -4,7 +4,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 
 	"gitlab.com/NebulousLabs/errors"
 )
@@ -350,7 +350,7 @@ func (w *worker) threadedWorkLoop() {
 		// once, to protect the total usage of the network connection. The
 		// worker wants to avoid a situation where 1,000 jobs each requiring a
 		// large amount of bandwidth are all running simultaneously. If the
-		// jobs are tiny in terms of resource footprints, the worker will allow
+		// jobs are tiny in terms of resource bartprints, the worker will allow
 		// more of them to be running at once.
 		if w.externTryLaunchAsyncJob() {
 			continue

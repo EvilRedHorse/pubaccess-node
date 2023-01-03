@@ -7,7 +7,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 var syncCounter int64

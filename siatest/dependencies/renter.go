@@ -3,7 +3,7 @@ package dependencies
 import (
 	"sync"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // DependencyTimeoutProjectDownloadByRoot immediately times out projects that

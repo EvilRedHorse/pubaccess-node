@@ -3,7 +3,7 @@ package consensus
 import (
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // mockMarshaler is a mock implementation of the encoding.GenericMarshaler

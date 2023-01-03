@@ -6,9 +6,9 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 var (
@@ -107,7 +107,7 @@ func writeSectorMetadata(f modules.File, sectorIndex uint32, id sectorID, count 
 }
 
 // sectorID returns the id that should be used when referring to a sector.
-// There are lots of sectors, and to minimize their footprint a reduced size
+// There are lots of sectors, and to minimize their bartprint a reduced size
 // hash is used. Hashes are typically 256bits to provide collision resistance
 // when an attacker can perform orders of magnitude more than a billion trials
 // per second. When attacking the host sector ids though, the attacker can only

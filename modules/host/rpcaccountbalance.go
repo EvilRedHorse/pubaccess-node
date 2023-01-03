@@ -4,7 +4,7 @@ import (
 	"gitlab.com/NebulousLabs/errors"
 
 	"gitlab.com/NebulousLabs/siamux"
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // managedRPCAccountBalance handles the RPC which returns the balance of the

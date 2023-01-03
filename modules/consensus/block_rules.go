@@ -4,7 +4,7 @@ import (
 	"sort"
 
 	"gitlab.com/NebulousLabs/encoding"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // blockRuleHelper assists with block validity checks by calculating values

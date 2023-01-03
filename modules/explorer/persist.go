@@ -7,9 +7,9 @@ import (
 	"gitlab.com/NebulousLabs/encoding"
 	bolt "go.etcd.io/bbolt"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 var explorerMetadata = persist.Metadata{

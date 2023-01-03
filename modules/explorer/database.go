@@ -5,7 +5,7 @@ import (
 	"gitlab.com/NebulousLabs/errors"
 	bolt "go.etcd.io/bbolt"
 
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 var (

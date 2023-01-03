@@ -42,7 +42,7 @@ func TestSelect(t *testing.T) {
 		t.Error("improper type assertion should panic")
 	}
 
-	v.Standard = "foo"
+	v.Standard = "bar"
 	if !didPanic(func() { Select(v) }) {
 		t.Error("Select should panic if field types do not match")
 	}

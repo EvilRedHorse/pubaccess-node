@@ -14,11 +14,11 @@ import (
 	"gitlab.com/NebulousLabs/errors"
 	"gitlab.com/NebulousLabs/fastrand"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/contractor"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/proto"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/contractor"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/proto"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // managedDownloadSnapshotTable will fetch the snapshot table from the host.

@@ -5,7 +5,7 @@ import (
 
 	"gitlab.com/NebulousLabs/encoding"
 
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // TestConsensusConflict checks that the consensus conflict type is correctly

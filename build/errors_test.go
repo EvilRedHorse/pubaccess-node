@@ -36,21 +36,21 @@ func TestJoinErrors(t *testing.T) {
 		},
 		// Test that JoinErrors returns non-nil with the expected string when errs has only one non-nil element.
 		{
-			errs:       []error{errors.New("foo")},
+			errs:       []error{errors.New("bar")},
 			sep:        ";",
-			errStrWant: "foo",
+			errStrWant: "bar",
 		},
 		// Test that JoinErrors returns non-nil with the expected string when errs has multiple non-nil elements.
 		{
-			errs:       []error{errors.New("foo"), errors.New("bar"), errors.New("baz")},
+			errs:       []error{errors.New("bar"), errors.New("bar"), errors.New("baz")},
 			sep:        ";",
-			errStrWant: "foo;bar;baz",
+			errStrWant: "bar;bar;baz",
 		},
 		// Test that nil errors are ignored.
 		{
-			errs:       []error{nil, errors.New("foo"), nil, nil, nil, errors.New("bar"), errors.New("baz"), nil, nil, nil},
+			errs:       []error{nil, errors.New("bar"), nil, nil, nil, errors.New("bar"), errors.New("baz"), nil, nil, nil},
 			sep:        ";",
-			errStrWant: "foo;bar;baz",
+			errStrWant: "bar;bar;baz",
 		},
 	}
 	for _, tt := range tests {

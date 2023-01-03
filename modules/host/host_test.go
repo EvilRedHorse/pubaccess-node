@@ -14,11 +14,11 @@ import (
 	"gitlab.com/NebulousLabs/errors"
 	"gitlab.com/NebulousLabs/siamux"
 	"gitlab.com/NebulousLabs/siamux/mux"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	siasync "gitlab.com/scpcorp/ScPrime/sync"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	siasync "github.com/EvilRedHorse/pubaccess-node/sync"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 const (
@@ -1002,7 +1002,7 @@ func TestSetAndGetInternalSettings(t *testing.T) {
 
 	// Check that calling SetInternalSettings with valid settings updates the settings.
 	settings.AcceptingContracts = true
-	settings.NetAddress = "foo.com:123"
+	settings.NetAddress = "bar.com:123"
 	err = ht.host.SetInternalSettings(settings)
 	if err != nil {
 		t.Fatal(err)
@@ -1011,7 +1011,7 @@ func TestSetAndGetInternalSettings(t *testing.T) {
 	if settings.AcceptingContracts != true {
 		t.Fatal("SetInternalSettings failed to update settings")
 	}
-	if settings.NetAddress != "foo.com:123" {
+	if settings.NetAddress != "bar.com:123" {
 		t.Fatal("SetInternalSettings failed to update settings")
 	}
 
@@ -1022,7 +1022,7 @@ func TestSetAndGetInternalSettings(t *testing.T) {
 		t.Fatal("expected SetInternalSettings to error with invalid settings")
 	}
 	settings = ht.host.InternalSettings()
-	if settings.NetAddress != "foo.com:123" {
+	if settings.NetAddress != "bar.com:123" {
 		t.Fatal("SetInternalSettings should not modify the settings if the new settings are invalid")
 	}
 

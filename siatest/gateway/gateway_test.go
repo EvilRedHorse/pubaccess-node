@@ -5,12 +5,12 @@ import (
 	"testing"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/gateway"
-	"gitlab.com/scpcorp/ScPrime/node"
-	"gitlab.com/scpcorp/ScPrime/siatest"
-	"gitlab.com/scpcorp/ScPrime/siatest/dependencies"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/gateway"
+	"github.com/EvilRedHorse/pubaccess-node/node"
+	"github.com/EvilRedHorse/pubaccess-node/siatest"
+	"github.com/EvilRedHorse/pubaccess-node/siatest/dependencies"
 )
 
 // TestGatewayRatelimit makes sure that we can set the gateway's ratelimits

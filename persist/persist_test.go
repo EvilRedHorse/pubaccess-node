@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 // TestIntegrationRandomSuffix checks that the random suffix creator creates

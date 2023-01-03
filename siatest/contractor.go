@@ -5,12 +5,12 @@ import (
 	"math/big"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/contractor"
-	"gitlab.com/scpcorp/ScPrime/node/api"
-	"gitlab.com/scpcorp/ScPrime/node/api/client"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/contractor"
+	"github.com/EvilRedHorse/pubaccess-node/node/api"
+	"github.com/EvilRedHorse/pubaccess-node/node/api/client"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 
 	"gitlab.com/NebulousLabs/errors"
 )

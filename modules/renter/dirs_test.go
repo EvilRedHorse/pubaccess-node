@@ -9,11 +9,11 @@ import (
 	"testing"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem/siadir"
-	"gitlab.com/scpcorp/ScPrime/siatest/dependencies"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem/siadir"
+	"github.com/EvilRedHorse/pubaccess-node/siatest/dependencies"
 )
 
 // TestRenterCreateDirectories checks that the renter properly created metadata files
@@ -29,7 +29,7 @@ func TestRenterCreateDirectories(t *testing.T) {
 	defer rt.Close()
 
 	// Test creating directory
-	siaPath, err := modules.NewSiaPath("foo/bar/baz")
+	siaPath, err := modules.NewSiaPath("bar/bar/baz")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -42,21 +42,21 @@ func TestRenterCreateDirectories(t *testing.T) {
 	if err := rt.checkDirInitialized(modules.RootSiaPath()); err != nil {
 		t.Fatal(err)
 	}
-	siaPath, err = modules.NewSiaPath("foo")
+	siaPath, err = modules.NewSiaPath("bar")
 	if err != nil {
 		t.Fatal(err)
 	}
 	if err := rt.checkDirInitialized(siaPath); err != nil {
 		t.Fatal(err)
 	}
-	siaPath, err = modules.NewSiaPath("foo/bar")
+	siaPath, err = modules.NewSiaPath("bar/bar")
 	if err != nil {
 		t.Fatal(err)
 	}
 	if err := rt.checkDirInitialized(siaPath); err != nil {
 		t.Fatal(err)
 	}
-	siaPath, err = modules.NewSiaPath("foo/bar/baz")
+	siaPath, err = modules.NewSiaPath("bar/bar/baz")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -138,7 +138,7 @@ func TestDirInfo(t *testing.T) {
 	defer rt.Close()
 
 	// Create directory
-	siaPath, err := modules.NewSiaPath("foo/")
+	siaPath, err := modules.NewSiaPath("bar/")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -147,7 +147,7 @@ func TestDirInfo(t *testing.T) {
 		t.Fatal(err)
 	}
 	// Check that DirInfo returns the same information as stored in the metadata
-	fooDirInfo, err := rt.renter.staticFileSystem.DirInfo(siaPath)
+	barDirInfo, err := rt.renter.staticFileSystem.DirInfo(siaPath)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -155,7 +155,7 @@ func TestDirInfo(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	fooEntry, err := rt.renter.staticFileSystem.OpenSiaDir(siaPath)
+	barEntry, err := rt.renter.staticFileSystem.OpenSiaDir(siaPath)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -163,7 +163,7 @@ func TestDirInfo(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	err = compareDirectoryInfoAndMetadata(fooDirInfo, fooEntry)
+	err = compareDirectoryInfoAndMetadata(barDirInfo, barEntry)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -187,7 +187,7 @@ func TestRenterListDirectory(t *testing.T) {
 	defer rt.Close()
 
 	// Create directory
-	siaPath, err := modules.NewSiaPath("foo/")
+	siaPath, err := modules.NewSiaPath("bar/")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -232,7 +232,7 @@ func TestRenterListDirectory(t *testing.T) {
 		root := directories[0]
 		// Check the aggregate and siadir fields.
 		//
-		// Expecting /home, /home/user, /var, /var/pubaccess, /snapshots, /foo
+		// Expecting /home, /home/user, /var, /var/pubaccess, /snapshots, /bar
 		if root.AggregateNumSubDirs != 6 {
 			return fmt.Errorf("Expected 6 subdirs in aggregate but got %v", root.AggregateNumSubDirs)
 		}
@@ -257,7 +257,7 @@ func TestRenterListDirectory(t *testing.T) {
 		t.Fatal(err)
 	}
 	rootDir.Close()
-	fooDir, err := rt.renter.staticFileSystem.OpenSiaDir(siaPath)
+	barDir, err := rt.renter.staticFileSystem.OpenSiaDir(siaPath)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -276,7 +276,7 @@ func TestRenterListDirectory(t *testing.T) {
 	if err = compareDirectoryInfoAndMetadata(directories[0], rootDir); err != nil {
 		t.Error(err)
 	}
-	if err = compareDirectoryInfoAndMetadata(directories[1], fooDir); err != nil {
+	if err = compareDirectoryInfoAndMetadata(directories[1], barDir); err != nil {
 		t.Error(err)
 	}
 	if err = compareDirectoryInfoAndMetadata(directories[2], homeDir); err != nil {

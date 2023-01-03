@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem/siafile"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem/siafile"
 )
 
 // TestRenterUploadDirectory verifies that the renter returns an error if a

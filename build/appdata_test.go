@@ -56,7 +56,7 @@ func TestSiadDataDir(t *testing.T) {
 	}
 
 	// Test Env Variable
-	newSiaDir := "foo/bar"
+	newSiaDir := "bar/bar"
 	err = os.Setenv(EnvvarDaemonDataDir, newSiaDir)
 	if err != nil {
 		t.Error(err)
@@ -83,7 +83,7 @@ func TestSiaDir(t *testing.T) {
 	}
 
 	// Test Env Variable
-	newSiaDir := "foo/bar"
+	newSiaDir := "bar/bar"
 	err = os.Setenv(EnvvarMetaDataDir, newSiaDir)
 	if err != nil {
 		t.Error(err)

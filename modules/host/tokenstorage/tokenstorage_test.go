@@ -9,10 +9,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/host/contractmanager"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/host/contractmanager"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 func createTokenStorage(t *testing.T) *TokenStorage {

@@ -1,8 +1,8 @@
 package contractor
 
 import (
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // IsOffline indicates whether a contract's host should be considered offline,

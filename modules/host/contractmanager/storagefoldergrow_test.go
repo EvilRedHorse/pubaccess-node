@@ -7,7 +7,7 @@ import (
 	"sync"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // TestGrowStorageFolder checks that a storage folder can be successfully

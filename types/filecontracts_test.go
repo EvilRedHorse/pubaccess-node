@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"gitlab.com/NebulousLabs/errors"
-	"gitlab.com/scpcorp/ScPrime/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
 )
 
 // TestForkedTax probes the Tax function after various SPF hardforks.

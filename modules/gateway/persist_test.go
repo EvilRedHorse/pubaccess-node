@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/persist"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
 )
 
 // TestLoad probes loading a gateway from a persist file

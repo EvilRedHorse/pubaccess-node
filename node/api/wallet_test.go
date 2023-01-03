@@ -12,15 +12,15 @@ import (
 	"gitlab.com/NebulousLabs/errors"
 	"gitlab.com/NebulousLabs/fastrand"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/consensus"
-	"gitlab.com/scpcorp/ScPrime/modules/gateway"
-	"gitlab.com/scpcorp/ScPrime/modules/miner"
-	"gitlab.com/scpcorp/ScPrime/modules/transactionpool"
-	"gitlab.com/scpcorp/ScPrime/modules/wallet"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/consensus"
+	"github.com/EvilRedHorse/pubaccess-node/modules/gateway"
+	"github.com/EvilRedHorse/pubaccess-node/modules/miner"
+	"github.com/EvilRedHorse/pubaccess-node/modules/transactionpool"
+	"github.com/EvilRedHorse/pubaccess-node/modules/wallet"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // TestWalletGETEncrypted probes the GET call to /wallet when the
@@ -277,7 +277,7 @@ func TestIntegrationWalletInitSeed(t *testing.T) {
 
 	// Make a call to /wallet/init/seed using an invalid seed
 	qs := url.Values{}
-	qs.Set("seed", "foo")
+	qs.Set("seed", "bar")
 	err = st.stdPostAPI("/wallet/init/seed", qs)
 	if err == nil {
 		t.Fatal("expected error, got nil")
@@ -295,7 +295,7 @@ func TestIntegrationWalletInitSeed(t *testing.T) {
 	}
 
 	// Try to re-init the wallet using a different encryption key
-	qs.Set("encryptionpassword", "foo")
+	qs.Set("encryptionpassword", "bar")
 	err = st.stdPostAPI("/wallet/init/seed", qs)
 	if err == nil {
 		t.Fatal("expected error, got nil")
@@ -483,7 +483,7 @@ func TestIntegrationWalletSweepSeedPOST(t *testing.T) {
 	}
 
 	// Call /wallet/sweep/seed with an invalid seed
-	qs.Set("seed", "foo")
+	qs.Set("seed", "bar")
 	err = st.postAPI("/wallet/sweep/seed", qs, &wsp)
 	if err == nil {
 		t.Fatal("expected error, got nil")

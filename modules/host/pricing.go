@@ -1,8 +1,8 @@
 package host
 
 import (
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 func (h *Host) calculatePriceByResource(resourceType types.Specifier, resourceAmount int64) types.Currency {

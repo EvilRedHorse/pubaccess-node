@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // TestMapHeapSimple test max-heap and min-heap versions of the MapHeap on the

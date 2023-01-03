@@ -6,7 +6,7 @@ import (
 
 	"gitlab.com/NebulousLabs/encoding"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // TestIpRPC tests the ip discovery RPC.

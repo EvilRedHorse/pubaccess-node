@@ -5,11 +5,11 @@ import (
 	"testing"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules/transactionpool"
-	"gitlab.com/scpcorp/ScPrime/siatest"
-	"gitlab.com/scpcorp/ScPrime/types"
-	"gitlab.com/scpcorp/ScPrime/types/typesutil"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules/transactionpool"
+	"github.com/EvilRedHorse/pubaccess-node/siatest"
+	"github.com/EvilRedHorse/pubaccess-node/types"
+	"github.com/EvilRedHorse/pubaccess-node/types/typesutil"
 )
 
 // TestEvictionPolicy will test that the transaction set minimizer in the

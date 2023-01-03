@@ -9,13 +9,13 @@ import (
 	"gitlab.com/NebulousLabs/errors"
 	bolt "go.etcd.io/bbolt"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	siasync "gitlab.com/scpcorp/ScPrime/sync"
-	"gitlab.com/scpcorp/ScPrime/types"
-	"gitlab.com/scpcorp/ScPrime/types/typesutil"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	siasync "github.com/EvilRedHorse/pubaccess-node/sync"
+	"github.com/EvilRedHorse/pubaccess-node/types"
+	"github.com/EvilRedHorse/pubaccess-node/types/typesutil"
 )
 
 var (

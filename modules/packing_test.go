@@ -8,7 +8,7 @@ import (
 	"text/tabwriter"
 
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 const (

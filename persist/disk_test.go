@@ -10,7 +10,7 @@ import (
 
 	"gitlab.com/NebulousLabs/fastrand"
 
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 // BenchmarkWrite512MiB checks how long it takes to write 512MiB sequentially.

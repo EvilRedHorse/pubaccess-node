@@ -7,8 +7,8 @@ import (
 	"os"
 	"sync"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	siasync "gitlab.com/scpcorp/ScPrime/sync"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	siasync "github.com/EvilRedHorse/pubaccess-node/sync"
 	"gitlab.com/scpcorp/writeaheadlog"
 
 	"gitlab.com/NebulousLabs/errors"

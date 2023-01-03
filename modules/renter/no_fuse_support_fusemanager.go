@@ -5,7 +5,7 @@ package renter
 import (
 	"gitlab.com/NebulousLabs/errors"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 var errNoFuseSupportOnSystem = errors.New("Fuse library is incompatible with this operating system.")

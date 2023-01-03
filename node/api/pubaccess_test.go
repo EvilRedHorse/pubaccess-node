@@ -7,7 +7,7 @@ import (
 
 	"gitlab.com/NebulousLabs/errors"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // TestDefaultPath ensures defaultPath functions correctly.
@@ -98,8 +98,8 @@ func TestDefaultPath(t *testing.T) {
 		},
 		{
 			name:               "single file multipart set to non-root",
-			queryForm:          url.Values{modules.SkyfileDefaultPathParamName: []string{"foo/bar/about.html"}},
-			subfiles:           modules.SkyfileSubfiles{"foo/bar/about.html": modules.PubfileSubfileMetadata{}},
+			queryForm:          url.Values{modules.SkyfileDefaultPathParamName: []string{"bar/bar/about.html"}},
+			subfiles:           modules.SkyfileSubfiles{"bar/bar/about.html": modules.PubfileSubfileMetadata{}},
 			defaultPath:        "",
 			disableDefaultPath: false,
 			err:                ErrInvalidDefaultPath,
@@ -187,10 +187,10 @@ func TestDefaultPath(t *testing.T) {
 		},
 		{
 			name:      "multi file set to non-root",
-			queryForm: url.Values{modules.SkyfileDefaultPathParamName: []string{"foo/bar/about.html"}},
+			queryForm: url.Values{modules.SkyfileDefaultPathParamName: []string{"bar/bar/about.html"}},
 			subfiles: modules.SkyfileSubfiles{
-				"foo/bar/about.html": modules.PubfileSubfileMetadata{},
-				"foo/bar/baz.html":   modules.PubfileSubfileMetadata{},
+				"bar/bar/about.html": modules.PubfileSubfileMetadata{},
+				"bar/bar/baz.html":   modules.PubfileSubfileMetadata{},
 			},
 			defaultPath:        "",
 			disableDefaultPath: false,
@@ -234,7 +234,7 @@ func TestSplitSkylinkString(t *testing.T) {
 		},
 		{
 			name:                 "no path with query",
-			strToParse:           "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w?foo=bar",
+			strToParse:           "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w?bar=bar",
 			publink:              "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w",
 			skylinkStringNoQuery: "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w",
 			path:                 "/",
@@ -242,55 +242,55 @@ func TestSplitSkylinkString(t *testing.T) {
 		},
 		{
 			name:                 "with path to file",
-			strToParse:           "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/foo/bar.baz",
+			strToParse:           "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/bar/bar.baz",
 			publink:              "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w",
-			skylinkStringNoQuery: "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/foo/bar.baz",
-			path:                 "/foo/bar.baz",
+			skylinkStringNoQuery: "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/bar/bar.baz",
+			path:                 "/bar/bar.baz",
 			errMsg:               "",
 		},
 		{
 			name:                 "with path to dir with trailing slash",
-			strToParse:           "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/foo/bar/",
+			strToParse:           "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/bar/bar/",
 			publink:              "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w",
-			skylinkStringNoQuery: "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/foo/bar/",
-			path:                 "/foo/bar/",
+			skylinkStringNoQuery: "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/bar/bar/",
+			path:                 "/bar/bar/",
 			errMsg:               "",
 		},
 		{
 			name:                 "with path to dir without trailing slash",
-			strToParse:           "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/foo/bar",
+			strToParse:           "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/bar/bar",
 			publink:              "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w",
-			skylinkStringNoQuery: "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/foo/bar",
-			path:                 "/foo/bar",
+			skylinkStringNoQuery: "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/bar/bar",
+			path:                 "/bar/bar",
 			errMsg:               "",
 		},
 		{
 			name:                 "with path to file with query",
-			strToParse:           "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/foo/bar.baz?foobar=nope",
+			strToParse:           "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/bar/bar.baz?barbar=nope",
 			publink:              "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w",
-			skylinkStringNoQuery: "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/foo/bar.baz",
-			path:                 "/foo/bar.baz",
+			skylinkStringNoQuery: "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/bar/bar.baz",
+			path:                 "/bar/bar.baz",
 			errMsg:               "",
 		},
 		{
 			name:                 "with path to dir with query with trailing slash",
-			strToParse:           "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/foo/bar/?foobar=nope",
+			strToParse:           "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/bar/bar/?barbar=nope",
 			publink:              "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w",
-			skylinkStringNoQuery: "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/foo/bar/",
-			path:                 "/foo/bar/",
+			skylinkStringNoQuery: "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/bar/bar/",
+			path:                 "/bar/bar/",
 			errMsg:               "",
 		},
 		{
 			name:                 "with path to dir with query without trailing slash",
-			strToParse:           "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/foo/bar?foobar=nope",
+			strToParse:           "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/bar/bar?barbar=nope",
 			publink:              "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w",
-			skylinkStringNoQuery: "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/foo/bar",
-			path:                 "/foo/bar",
+			skylinkStringNoQuery: "IAC6CkhNYuWZqMVr1gob1B6tPg4MrBGRzTaDvAIAeu9A9w/bar/bar",
+			path:                 "/bar/bar",
 			errMsg:               "",
 		},
 		{
 			name:                 "invalid publink",
-			strToParse:           "invalid_publink/foo/bar?foobar=nope",
+			strToParse:           "invalid_publink/bar/bar?barbar=nope",
 			publink:              "",
 			skylinkStringNoQuery: "",
 			path:                 "",

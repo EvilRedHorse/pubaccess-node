@@ -64,7 +64,7 @@ func TestSiapathValidate(t *testing.T) {
 		{"valid/path../test", true},
 		{"test/path", true},
 		{"/leading/slash", false},
-		{"foo/./bar", false},
+		{"bar/./bar", false},
 		{"", false},
 		{"blank/end/", false},
 		{"double//dash", false},
@@ -106,7 +106,7 @@ func TestSiapath(t *testing.T) {
 		{"valid/path../test", true, "valid/path../test"},
 		{"test/path", true, "test/path"},
 		{"/leading/slash", true, "leading/slash"}, // clean will trim leading slashes so this is a valid input
-		{"foo/./bar", false, ""},
+		{"bar/./bar", false, ""},
 		{"", false, ""},
 		{`\`, true, `\`},
 		{`\\`, true, `\\`},

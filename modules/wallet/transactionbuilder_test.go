@@ -4,8 +4,8 @@ import (
 	"sync"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // addBlockNoPayout adds a block to the wallet tester that does not have any

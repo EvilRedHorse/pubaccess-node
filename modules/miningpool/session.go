@@ -9,8 +9,8 @@ import (
 
 	"github.com/sasha-s/go-deadlock"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/persist"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
 )
 
 const (

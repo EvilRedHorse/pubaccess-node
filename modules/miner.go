@@ -3,7 +3,7 @@ package modules
 import (
 	"io"
 
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 const (

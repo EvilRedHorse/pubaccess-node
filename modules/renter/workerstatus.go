@@ -3,7 +3,7 @@ package renter
 import (
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // callStatus returns the status of the worker.

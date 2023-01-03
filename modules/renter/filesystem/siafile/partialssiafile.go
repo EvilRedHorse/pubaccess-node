@@ -5,7 +5,7 @@ import (
 
 	"gitlab.com/NebulousLabs/errors"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 	"gitlab.com/scpcorp/writeaheadlog"
 )
 

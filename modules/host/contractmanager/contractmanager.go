@@ -29,10 +29,10 @@ import (
 	"path/filepath"
 	"sync/atomic"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	siasync "gitlab.com/scpcorp/ScPrime/sync"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	siasync "github.com/EvilRedHorse/pubaccess-node/sync"
 
 	"gitlab.com/NebulousLabs/errors"
 )

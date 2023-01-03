@@ -12,7 +12,7 @@ import (
 	"math"
 	"math/big"
 
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 type (

@@ -3,7 +3,7 @@ package miner
 import (
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // TestIntegrationBlockHeightReorg checks that the miner has the correct block

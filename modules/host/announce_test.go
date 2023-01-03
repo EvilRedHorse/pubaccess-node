@@ -4,8 +4,8 @@ import (
 	"net"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // announcementFinder is a quick module that parses the blockchain for host
@@ -122,7 +122,7 @@ func TestHostAnnounceAddress(t *testing.T) {
 
 	// Create an announcement, then use the address finding module to scan the
 	// blockchain for the host's address.
-	addr := modules.NetAddress("foo.com:1234")
+	addr := modules.NetAddress("bar.com:1234")
 	err = ht.host.AnnounceAddress(addr)
 	if err != nil {
 		t.Fatal(err)

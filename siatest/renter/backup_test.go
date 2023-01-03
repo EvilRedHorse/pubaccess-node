@@ -10,12 +10,12 @@ import (
 	"testing"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem"
-	"gitlab.com/scpcorp/ScPrime/node"
-	"gitlab.com/scpcorp/ScPrime/siatest"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem"
+	"github.com/EvilRedHorse/pubaccess-node/node"
+	"github.com/EvilRedHorse/pubaccess-node/siatest"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 
 	"gitlab.com/NebulousLabs/errors"
 )
@@ -238,7 +238,7 @@ func TestInterruptBackup(t *testing.T) {
 	}
 
 	// Create a snapshot.
-	if err := r.RenterCreateBackupPost("foo"); err != nil {
+	if err := r.RenterCreateBackupPost("bar"); err != nil {
 		r.PrintDebugInfo(t, true, true, true)
 		t.Fatal(err)
 	}
@@ -354,11 +354,11 @@ func TestRemoteBackup(t *testing.T) {
 			return errors.New("backup not found")
 		})
 	}
-	if err := createSnapshot("foo"); err != nil {
+	if err := createSnapshot("bar"); err != nil {
 		t.Fatal(err)
 	}
 	// Create a snapshot with the same name again. This should fail.
-	err = createSnapshot("foo")
+	err = createSnapshot("bar")
 	if err == nil || !strings.Contains(err.Error(), filesystem.ErrExists.Error()) {
 		t.Fatal("creating a snapshot with the same name should fail", err)
 	}
@@ -398,7 +398,7 @@ func TestRemoteBackup(t *testing.T) {
 	if err := r.RenterFileDeletePost(rf2.SiaPath()); err != nil {
 		t.Fatal(err)
 	}
-	if err := r.RenterRecoverBackupPost("foo"); err != nil {
+	if err := r.RenterRecoverBackupPost("bar"); err != nil {
 		t.Fatal(err)
 	}
 	// We should be able to download the first file.

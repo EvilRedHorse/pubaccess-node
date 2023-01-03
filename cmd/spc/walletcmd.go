@@ -12,12 +12,12 @@ import (
 	"syscall"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/wallet"
-	"gitlab.com/scpcorp/ScPrime/node/api"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/wallet"
+	"github.com/EvilRedHorse/pubaccess-node/node/api"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 
 	"github.com/spf13/cobra"
 	"gitlab.com/NebulousLabs/encoding"

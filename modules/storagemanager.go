@@ -1,7 +1,7 @@
 package modules
 
 import (
-	"gitlab.com/scpcorp/ScPrime/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
 )
 
 const (

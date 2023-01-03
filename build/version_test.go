@@ -36,7 +36,7 @@ func TestIsVersion(t *testing.T) {
 		{"1", true},
 		{"0.1.2.3.4.5", true},
 
-		{"foo", false},
+		{"bar", false},
 		{".1", false},
 		{"1.", false},
 		{"a.b", false},

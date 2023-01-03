@@ -145,7 +145,7 @@ func TestReadWriteSignedObject(t *testing.T) {
 
 	// Write signed object into buffer.
 	b := new(bytes.Buffer)
-	err := WriteSignedObject(b, "foo", sk)
+	err := WriteSignedObject(b, "bar", sk)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -158,8 +158,8 @@ func TestReadWriteSignedObject(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if read != "foo" {
-		t.Fatal("encode/decode mismatch: expected 'foo', got", []byte(read))
+	if read != "bar" {
+		t.Fatal("encode/decode mismatch: expected 'bar', got", []byte(read))
 	}
 
 	// Check that maxlen is being respected.

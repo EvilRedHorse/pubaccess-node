@@ -9,7 +9,7 @@ import (
 	"gitlab.com/NebulousLabs/fastrand"
 	bolt "go.etcd.io/bbolt"
 
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 // testInputs and testFilenames are global variables because most tests require
@@ -41,7 +41,7 @@ var (
 		{Metadata{"\xF0\x9F\x98\x8F", "\xF0\x9F\x98\xBE"}, Metadata{"\xF0\x9F\x98\x8F", " \xF0\x9F\x98\xBE"}, ErrBadVersion},
 		{Metadata{"'", ""}, Metadata{"`", ""}, ErrBadHeader},
 		{Metadata{"", "-"}, Metadata{"", "-␡"}, ErrBadVersion},
-		{Metadata{"<foo val=“bar” />", "(ﾉಥ益ಥ ┻━┻"}, Metadata{"<foo val=“bar” />", "(ﾉ\nಥ益ಥ ┻━┻"}, ErrBadVersion},
+		{Metadata{"<bar val=“bar” />", "(ﾉಥ益ಥ ┻━┻"}, Metadata{"<bar val=“bar” />", "(ﾉ\nಥ益ಥ ┻━┻"}, ErrBadVersion},
 		{Metadata{"\n\n", "Ṱ̺̺o͞ ̷i̲̬n̝̗v̟̜o̶̙kè͚̮ ̖t̝͕h̼͓e͇̣ ̢̼h͚͎i̦̲v̻͍e̺̭-m̢iͅn̖̺d̵̼ ̞̥r̛̗e͙p͠r̼̞e̺̠s̘͇e͉̥ǹ̬͎t͍̬i̪̱n͠g̴͉ ͏͉c̬̟h͡a̫̻o̫̟s̗̦.̨̹"}, Metadata{"\n\n", "Ṱ̺̺o͞ ̷i̲̬n̝̗v̟̜o̶̙kè͚̮ t̝͕h̼͓e͇̣ ̢̼h͚͎i̦̲v̻͍e̺̭-m̢iͅn̖̺d̵̼ ̞̥r̛̗e͙p͠r̼̞e̺̠s̘͇e͉̥ǹ̬͎t͍̬i̪̱n͠g̴͉ ͏͉c̬̟h͡a̫̻o̫̟s̗̦.̨̹"}, ErrBadVersion},
 	}
 	testFilenames = []string{

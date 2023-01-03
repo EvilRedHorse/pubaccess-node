@@ -1,7 +1,7 @@
 package dependencies
 
 import (
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // DependencyDisableAutoOnline will disable the gateway always being online

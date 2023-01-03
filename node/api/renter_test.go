@@ -16,12 +16,12 @@ import (
 	"gitlab.com/NebulousLabs/errors"
 	"gitlab.com/NebulousLabs/fastrand"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/contractor"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem/siafile"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/contractor"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem/siafile"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 const (
@@ -546,7 +546,7 @@ func TestRenterPaths(t *testing.T) {
 	uploadValues := url.Values{}
 	uploadValues.Set("source", path)
 	uploadValues.Set("renew", "true")
-	err = st.stdPostAPI("/renter/upload/foo/bar/test", uploadValues)
+	err = st.stdPostAPI("/renter/upload/bar/bar/test", uploadValues)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -557,7 +557,7 @@ func TestRenterPaths(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(rf.Files) != 1 || rf.Files[0].SiaPath.String() != "foo/bar/test" {
+	if len(rf.Files) != 1 || rf.Files[0].SiaPath.String() != "bar/bar/test" {
 		t.Fatal("/renter/files did not return correct file:", rf)
 	}
 }
@@ -588,12 +588,12 @@ func TestRenterConflicts(t *testing.T) {
 	}
 
 	// Upload to host, using a path designed to cause conflicts. The renter
-	// should automatically create a folder called foo/bar.sia. Later, we'll
-	// exploit this by uploading a file called foo/bar.
+	// should automatically create a folder called bar/bar.sia. Later, we'll
+	// exploit this by uploading a file called bar/bar.
 	uploadValues := url.Values{}
 	uploadValues.Set("source", path)
 	uploadValues.Set("renew", "true")
-	err = st.stdPostAPI("/renter/upload/foo/bar.sia/test", uploadValues)
+	err = st.stdPostAPI("/renter/upload/bar/bar.sia/test", uploadValues)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -604,18 +604,18 @@ func TestRenterConflicts(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(rf.Files) != 1 || rf.Files[0].SiaPath.String() != "foo/bar.sia/test" {
+	if len(rf.Files) != 1 || rf.Files[0].SiaPath.String() != "bar/bar.sia/test" {
 		t.Fatal("/renter/files did not return correct file:", rf)
 	}
 
 	// Upload using the same nickname.
-	err = st.stdPostAPI("/renter/upload/foo/bar.sia/test", uploadValues)
+	err = st.stdPostAPI("/renter/upload/bar/bar.sia/test", uploadValues)
 	if err == nil {
 		t.Fatalf("expected %v, got %v", Error{"upload failed: " + filesystem.ErrExists.Error()}, err)
 	}
 
 	// Upload using nickname that conflicts with folder.
-	err = st.stdPostAPI("/renter/upload/foo/bar", uploadValues)
+	err = st.stdPostAPI("/renter/upload/bar/bar", uploadValues)
 	if err == nil {
 		t.Fatal("expecting conflict error, got nil")
 	}

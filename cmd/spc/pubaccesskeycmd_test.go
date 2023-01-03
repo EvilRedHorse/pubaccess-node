@@ -7,8 +7,8 @@ import (
 
 	"gitlab.com/NebulousLabs/errors"
 
-	"gitlab.com/scpcorp/ScPrime/node/api/client"
-	"gitlab.com/scpcorp/ScPrime/pubaccesskey"
+	"github.com/EvilRedHorse/pubaccess-node/node/api/client"
+	"github.com/EvilRedHorse/pubaccess-node/pubaccesskey"
 )
 
 const testSkykeyString string = "pubaccesskey:Aa71WcCoKFwVGAVotJh3USAslb8dotVJp2VZRRSAG2QhYRbuTbQhjDolIJ1nOlQ-rWYK29_1xee5?name=test_key1"

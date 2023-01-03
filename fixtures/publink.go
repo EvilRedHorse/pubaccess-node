@@ -5,7 +5,7 @@ import (
 	"errors"
 	"io/ioutil"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 const (

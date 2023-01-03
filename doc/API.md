@@ -61,7 +61,7 @@ empty string. The flag does not enforce authentication on all API endpoints.
 Only endpoints that expose sensitive information or modify state require
 authentication.
 
-For example, if the API password is "foobar" the request header should include
+For example, if the API password is "barbar" the request header should include
 ```
 Authorization: Basic OmZvb2Jhcg==
 ```
@@ -537,7 +537,7 @@ gets a list of folders tracked by the host's storage manager.
 {
   "folders": [
     {
-      "path":              "/home/foo/bar",
+      "path":              "/home/bar/bar",
       "capacity":          50000000000,     // bytes
       "capacityremaining": 100000,          // bytes
 
@@ -1008,7 +1008,7 @@ lists all files in the download queue.
       "destinationtype": "file",
       "length":          8192,
       "offset":          2000,
-      "siapath":         "foo/bar.txt",
+      "siapath":         "bar/bar.txt",
 
       "completed":           true,
       "endtime":             "2009-11-10T23:10:00Z", // RFC 3339 time
@@ -1049,8 +1049,8 @@ lists the status of all files.
 {
   "files": [
     {
-      "siapath":        "foo/bar.txt",
-      "localpath":      "/home/foo/bar.txt",
+      "siapath":        "bar/bar.txt",
+      "localpath":      "/home/bar/bar.txt",
       "filesize":       8192, // bytes
       "available":      true,
       "renewing":       true,
@@ -1071,8 +1071,8 @@ lists the status of specified file.
 ```javascript
 {
   "file": {
-    "siapath":        "foo/bar.txt",
-    "localpath":      "/home/foo/bar.txt",
+    "siapath":        "bar/bar.txt",
+    "localpath":      "/home/bar/bar.txt",
     "filesize":       8192, // bytes
     "available":      true,
     "renewing":       true,
@@ -1540,7 +1540,7 @@ dictionary
   "addressesremaining": 2500,
   "allseeds":           [
     "hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello",
-    "foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo bar foo",
+    "bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar bar",
   ]
 }
 ```

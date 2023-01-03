@@ -10,16 +10,16 @@ import (
 	"time"
 
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/build"
-	fileConfig "gitlab.com/scpcorp/ScPrime/config"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/consensus"
-	"gitlab.com/scpcorp/ScPrime/modules/gateway"
-	"gitlab.com/scpcorp/ScPrime/modules/stratumminer"
-	"gitlab.com/scpcorp/ScPrime/modules/transactionpool"
-	"gitlab.com/scpcorp/ScPrime/modules/wallet"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	fileConfig "github.com/EvilRedHorse/pubaccess-node/config"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/consensus"
+	"github.com/EvilRedHorse/pubaccess-node/modules/gateway"
+	"github.com/EvilRedHorse/pubaccess-node/modules/stratumminer"
+	"github.com/EvilRedHorse/pubaccess-node/modules/transactionpool"
+	"github.com/EvilRedHorse/pubaccess-node/modules/wallet"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 
 	"gitlab.com/NebulousLabs/errors"
 
@@ -343,7 +343,7 @@ func TestStratumStartStopMiningBadAddress(t *testing.T) {
 	}
 	settings := pt.mpool.InternalSettings()
 	port := strconv.FormatInt(int64(settings.PoolNetworkPort), 10)
-	username := "foo"
+	username := "bar"
 	sm.StartStratumMining(port, username)
 	sm.StopStratumMining()
 	sm.StartStratumMining(port, username)

@@ -3,8 +3,8 @@ package contractor
 import (
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // contractWithSize is a helper function that creates a dummy file contract with a certain size.

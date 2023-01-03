@@ -3,8 +3,8 @@ package miner
 import (
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/node"
-	"gitlab.com/scpcorp/ScPrime/siatest"
+	"github.com/EvilRedHorse/pubaccess-node/node"
+	"github.com/EvilRedHorse/pubaccess-node/siatest"
 )
 
 // TestMinerEmptyBlock tests if a miner can mine and submit an empty block.

@@ -39,7 +39,7 @@ of their encoded elements. For example:
 
 ```go
 //                                  slice len: 1     string len: 3   string data
-Marshal([]string{"foo"}) == []byte{1,0,0,0,0,0,0,0, 3,0,0,0,0,0,0,0, 'f','o','o'}
+Marshal([]string{"bar"}) == []byte{1,0,0,0,0,0,0,0, 3,0,0,0,0,0,0,0, 'f','o','o'}
 ```
 
 Maps are not supported; attempting to encode a map will cause `Marshal` to
@@ -57,12 +57,12 @@ this rule is subject to change.) The ordering of struct fields is determined
 by their type definition. For example:
 
 ```go
-type foo struct {
+type bar struct {
 	S string
 	I int
 }
 
-Marshal(foo{"bar", 3}) == append(Marshal("bar"), Marshal(3)...)
+Marshal(bar{"bar", 3}) == append(Marshal("bar"), Marshal(3)...)
 ```
 
 Finally, if a type implements the SiaMarshaler interface, its MarshalSia

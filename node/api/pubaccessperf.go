@@ -26,7 +26,7 @@ type (
 	// distribution is not reliable until stats collection has been running for
 	// a large multiple of the half life of the distribution.
 	//
-	// Exponential decay is used to limit the memory footprint and computational
+	// Exponential decay is used to limit the memory bartprint and computational
 	// overhead of stats collection.
 	RequestTimeDistribution struct {
 		N60ms   float64 `json:"n60ms"` // Requests taking less than 60ms

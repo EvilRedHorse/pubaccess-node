@@ -3,8 +3,8 @@ package wallet
 import (
 	"os"
 
-	"gitlab.com/scpcorp/ScPrime/persist"
-	"gitlab.com/scpcorp/ScPrime/siatest"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	"github.com/EvilRedHorse/pubaccess-node/siatest"
 )
 
 // walletTestDir creates a temporary testing directory for a wallet test. This

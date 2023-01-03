@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/siatest/dependencies"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/siatest/dependencies"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // TestCheckUploadGouging checks that the upload price gouging checker is

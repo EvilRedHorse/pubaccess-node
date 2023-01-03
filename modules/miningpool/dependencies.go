@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/persist"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
 )
 
 // Fake errors that get returned when a simulated failure of a dependency is

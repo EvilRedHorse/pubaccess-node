@@ -9,8 +9,8 @@ import (
 	"github.com/spf13/cobra"
 
 	"gitlab.com/NebulousLabs/errors"
-	"gitlab.com/scpcorp/ScPrime/node/api/client"
-	"gitlab.com/scpcorp/ScPrime/pubaccesskey"
+	"github.com/EvilRedHorse/pubaccess-node/node/api/client"
+	"github.com/EvilRedHorse/pubaccess-node/pubaccesskey"
 )
 
 var (

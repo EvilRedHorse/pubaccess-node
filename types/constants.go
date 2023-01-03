@@ -11,7 +11,7 @@ import (
 	"math/big"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 var (

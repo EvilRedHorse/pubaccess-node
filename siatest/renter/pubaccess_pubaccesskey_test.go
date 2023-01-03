@@ -7,12 +7,12 @@ import (
 	"testing"
 
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/node/api"
-	"gitlab.com/scpcorp/ScPrime/node/api/client"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	"gitlab.com/scpcorp/ScPrime/pubaccesskey"
-	"gitlab.com/scpcorp/ScPrime/siatest"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/node/api"
+	"github.com/EvilRedHorse/pubaccess-node/node/api/client"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	"github.com/EvilRedHorse/pubaccess-node/pubaccesskey"
+	"github.com/EvilRedHorse/pubaccess-node/siatest"
 )
 
 // TestSkykey verifies the functionality of the Pubaccesskeys.

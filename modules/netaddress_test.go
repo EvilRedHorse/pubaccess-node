@@ -13,7 +13,7 @@ var (
 	invalidAddrs = []string{
 		// Garbage addresses
 		"",
-		"foo:bar:baz",
+		"bar:bar:baz",
 		"garbage:6146:616",
 		// Missing host / port
 		":",
@@ -21,28 +21,28 @@ var (
 		"12.34.45.64",
 		"[::2]",
 		"::2",
-		"foo",
+		"bar",
 		"hn.com",
 		"世界",
-		"foo:",
+		"bar:",
 		"世界:",
-		":foo",
+		":bar",
 		":世界",
 		"localhost:",
 		"[::1]:",
 		// Invalid host / port chars
 		"localhost:-",
 		"[::1]:-",
-		"foo:{}",
+		"bar:{}",
 		"{}:123",
-		" foo:123",
-		"foo :123",
+		" bar:123",
+		"bar :123",
 		"f oo:123",
-		"foo: 123",
-		"foo:123 ",
-		"foo:1 23",
+		"bar: 123",
+		"bar:123 ",
+		"bar:1 23",
 		"\x00:123",
-		"foo:\x00",
+		"bar:\x00",
 		"世界:123",
 		"bar:世界",
 		"世:界",
@@ -56,22 +56,22 @@ var (
 		strings.Repeat("a", 64) + ".com:123",                       // 64 char long label too long.
 		strings.Repeat(strings.Repeat("a", 62)+".", 4) + "co:123",  // 254 char long hostname too long.
 		strings.Repeat(strings.Repeat("a", 62)+".", 4) + "co.:123", // 254 char long hostname with trailing dot too long.
-		"-foo.bar:123",
-		"foo-.bar:123",
-		"foo.-bar:123",
-		"foo.bar-:123",
-		"foo-bar.-baz:123",
-		"foo-bar.baz-:123",
-		"foo.-bar.baz:123",
-		"foo.bar-.baz:123",
+		"-bar.bar:123",
+		"bar-.bar:123",
+		"bar.-bar:123",
+		"bar.bar-:123",
+		"bar-bar.-baz:123",
+		"bar-bar.baz-:123",
+		"bar.-bar.baz:123",
+		"bar.bar-.baz:123",
 		".:123",
-		".foo.com:123",
-		"foo.com..:123",
+		".bar.com:123",
+		"bar.com..:123",
 		// invalid port numbers
-		"foo:0",
-		"foo:65536",
-		"foo:-100",
-		"foo:1000000",
+		"bar:0",
+		"bar:65536",
+		"bar:-100",
+		"bar:1000000",
 		"localhost:0",
 		"[::1]:0",
 	}
@@ -81,22 +81,22 @@ var (
 		"127.0.0.1:123",
 		"[::1]:123",
 		// Valid addresses.
-		"foo.com:1",
-		"foo.com.:1",
+		"bar.com:1",
+		"bar.com.:1",
 		"a.b.c:1",
 		"a.b.c.:1",
-		"foo-bar.com:123",
+		"bar-bar.com:123",
 		"FOO.com:1",
-		"1foo.com:1",
-		"tld.foo.com:1",
+		"1bar.com:1",
+		"tld.bar.com:1",
 		"hn.com:8811",
 
 		"[::2]:65535",
 		"111.111.111.111:111",
 		"12.34.45.64:7777",
 
-		strings.Repeat("foo.", 63) + "f:123",  // 253 chars long
-		strings.Repeat("foo.", 63) + "f.:123", // 254 chars long, 253 chars long without trailing dot
+		strings.Repeat("bar.", 63) + "f:123",  // 253 chars long
+		strings.Repeat("bar.", 63) + "f.:123", // 254 chars long, 253 chars long without trailing dot
 
 		strings.Repeat(strings.Repeat("a", 63)+".", 3) + "a:123", // 3x63 char length labels + 1x1 char length label without trailing dot
 		strings.Repeat(strings.Repeat("a", 63)+".", 3) + ":123",  // 3x63 char length labels with trailing dot

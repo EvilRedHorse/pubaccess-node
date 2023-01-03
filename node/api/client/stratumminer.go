@@ -3,7 +3,7 @@ package client
 import (
 	"net/url"
 
-	"gitlab.com/scpcorp/ScPrime/node/api"
+	"github.com/EvilRedHorse/pubaccess-node/node/api"
 )
 
 // StratumMinerGet requests the /stratumminer endpoint's resources.

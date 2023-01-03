@@ -10,7 +10,7 @@ import (
 	"strings"
 
 	"gitlab.com/NebulousLabs/encoding"
-	"gitlab.com/scpcorp/ScPrime/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
 )
 
 const (

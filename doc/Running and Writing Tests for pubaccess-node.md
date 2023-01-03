@@ -161,14 +161,14 @@ Suppose we'd like to test the Bar method belonging to type Foo.
 // TestFoo checks that the Bar method on type Foo responds correctly to a normal
 // input and returns the expected error when given a bad input.
 func TestFoo(t *testing.T) {
-	foo, err := NewFoo()
+	bar, err := NewFoo()
 	if err != nil {
 	// If NewFoo failed, we can't continue testing.
 	t.Fatal(err)
 	}
 
 	// Try a normal input; should succeed.
-	err := foo.Bar(3)
+	err := bar.Bar(3)
 	if err != nil {
 		// Report the error, but don't abort the test.
 		t.Error(err)

@@ -10,8 +10,8 @@ import (
 	"runtime/debug"
 	"sync"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 const (
@@ -60,7 +60,7 @@ const (
 //
 // Note that if a large low priority request comes in, it is possible for that
 // large request to block higher priority requests because the memory manager
-// will prefer to keep the memory footprint as close as possible to the
+// will prefer to keep the memory bartprint as close as possible to the
 // initialized size rather than continue to allow high priority requests to go
 // through when more than all of the memory has been used up.
 //

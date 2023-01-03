@@ -6,7 +6,7 @@ import (
 	"runtime"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/node"
+	"github.com/EvilRedHorse/pubaccess-node/node"
 )
 
 // TestNextNodeAddress probes nextNodeAddress to verify that the addresses are

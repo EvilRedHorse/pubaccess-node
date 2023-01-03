@@ -3,8 +3,8 @@ package hosttree
 import (
 	"math/big"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // ScoreBreakdown is an interface that allows us to mock the hostAdjustments

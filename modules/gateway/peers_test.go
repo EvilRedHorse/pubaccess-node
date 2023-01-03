@@ -12,9 +12,9 @@ import (
 	"gitlab.com/NebulousLabs/encoding"
 	"gitlab.com/NebulousLabs/fastrand"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // dummyConn implements the net.Conn interface, but does not carry any actual
@@ -42,7 +42,7 @@ func TestAddPeer(t *testing.T) {
 	defer g.mu.Unlock()
 	g.addPeer(&peer{
 		Peer: modules.Peer{
-			NetAddress: "foo.com:123",
+			NetAddress: "bar.com:123",
 		},
 		sess: newClientStream(new(dummyConn), build.Version),
 	})
@@ -209,7 +209,7 @@ func TestRandomOutboundPeer(t *testing.T) {
 
 	g.addPeer(&peer{
 		Peer: modules.Peer{
-			NetAddress: "foo.com:123",
+			NetAddress: "bar.com:123",
 			Inbound:    false,
 		},
 		sess: newClientStream(new(dummyConn), build.Version),
@@ -218,7 +218,7 @@ func TestRandomOutboundPeer(t *testing.T) {
 		t.Fatal("gateway did not add peer")
 	}
 	addr, err := g.randomOutboundPeer()
-	if err != nil || addr != "foo.com:123" {
+	if err != nil || addr != "bar.com:123" {
 		t.Fatal("gateway did not select random peer")
 	}
 }
@@ -417,17 +417,17 @@ func TestConnect(t *testing.T) {
 func TestUnitAcceptableVersion(t *testing.T) {
 	invalidVersions := []string{
 		// ascii gibberish
-		"foobar",
-		"foobar.0",
-		"foobar.9",
-		"0.foobar",
-		"9.foobar",
-		"foobar.0.0",
-		"foobar.9.9",
-		"0.foobar.0",
-		"9.foobar.9",
-		"0.0.foobar",
-		"9.9.foobar",
+		"barbar",
+		"barbar.0",
+		"barbar.9",
+		"0.barbar",
+		"9.barbar",
+		"barbar.0.0",
+		"barbar.9.9",
+		"0.barbar.0",
+		"9.barbar.9",
+		"0.0.barbar",
+		"9.9.barbar",
 		// utf-8 gibberish
 		"世界",
 		"世界.0",
@@ -613,7 +613,7 @@ func TestConnectRejectsVersions(t *testing.T) {
 		},
 		// Test that Connect fails when the remote peer's version is ascii gibberish.
 		{
-			version:        "foobar",
+			version:        "barbar",
 			invalidVersion: true,
 			msg:            "Connect should fail when the remote peer's version is ascii gibberish",
 		},
@@ -769,7 +769,7 @@ func TestAcceptConnRejectsVersions(t *testing.T) {
 		},
 		// Test that acceptConn fails when the remote peer's version is ascii gibberish.
 		{
-			remoteVersion:       "foobar",
+			remoteVersion:       "barbar",
 			versionResponseWant: "",
 			errWant:             errPeerRejectedConn,
 			msg:                 "acceptConn shouldn't accept a remote peer whose version is ascii gibberish",
@@ -1218,7 +1218,7 @@ func TestPeerManagerOutboundSave(t *testing.T) {
 func TestBuildPeerManagerNodeList(t *testing.T) {
 	g := &Gateway{
 		nodes: map[modules.NetAddress]*node{
-			"foo":  {NetAddress: "foo", WasOutboundPeer: true},
+			"bar":  {NetAddress: "bar", WasOutboundPeer: true},
 			"bar":  {NetAddress: "bar", WasOutboundPeer: false},
 			"baz":  {NetAddress: "baz", WasOutboundPeer: true},
 			"quux": {NetAddress: "quux", WasOutboundPeer: false},

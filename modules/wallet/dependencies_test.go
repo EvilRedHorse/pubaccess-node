@@ -1,6 +1,6 @@
 package wallet
 
-import "gitlab.com/scpcorp/ScPrime/modules"
+import "github.com/EvilRedHorse/pubaccess-node/modules"
 
 type (
 	// dependencyAcceptTxnSetFailed is a dependency used to cause a call to

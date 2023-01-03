@@ -7,7 +7,7 @@ import (
 	"strings"
 	"sync"
 
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 // The following consts are the different types of severity levels available in

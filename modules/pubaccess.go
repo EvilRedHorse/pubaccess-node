@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/pubaccesskey"
+	"github.com/EvilRedHorse/pubaccess-node/pubaccesskey"
 )
 
 const (

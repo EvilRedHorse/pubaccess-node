@@ -3,8 +3,8 @@ package api
 import (
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules/gateway"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules/gateway"
 )
 
 // TestGatewayStatus checks that the /gateway/status call is returning a correct

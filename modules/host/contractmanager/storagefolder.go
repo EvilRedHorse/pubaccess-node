@@ -9,8 +9,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/sync"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/sync"
 
 	"gitlab.com/NebulousLabs/fastrand"
 )

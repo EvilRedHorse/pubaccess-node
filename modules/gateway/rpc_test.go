@@ -9,14 +9,14 @@ import (
 	"time"
 
 	"gitlab.com/NebulousLabs/encoding"
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 func TestRPCID(t *testing.T) {
 	cases := map[rpcID]string{
 		{}:                                       "        ",
-		{'f', 'o', 'o'}:                          "foo     ",
-		{'f', 'o', 'o', 'b', 'a', 'r', 'b', 'a'}: "foobarba",
+		{'f', 'o', 'o'}:                          "bar     ",
+		{'f', 'o', 'o', 'b', 'a', 'r', 'b', 'a'}: "barbarba",
 	}
 	for id, s := range cases {
 		if id.String() != s {
@@ -28,8 +28,8 @@ func TestRPCID(t *testing.T) {
 func TestHandlerName(t *testing.T) {
 	cases := map[string]rpcID{
 		"":          {},
-		"foo":       {'f', 'o', 'o'},
-		"foobarbaz": {'f', 'o', 'o', 'b', 'a', 'r', 'b', 'a'},
+		"bar":       {'f', 'o', 'o'},
+		"barbarbaz": {'f', 'o', 'o', 'b', 'a', 'r', 'b', 'a'},
 	}
 	for s, id := range cases {
 		if hid := handlerName(s); hid != id {
@@ -80,7 +80,7 @@ func TestUnregisterRPC(t *testing.T) {
 
 	// Register RPC and check that calling it succeeds.
 	g1.RegisterRPC("Foo", func(conn modules.PeerConn) error {
-		return encoding.WriteObject(conn, "foo")
+		return encoding.WriteObject(conn, "bar")
 	})
 	err = g2.RPC(g1.Address(), "Foo", dummyFunc)
 	if err != nil {
@@ -182,7 +182,7 @@ func TestRPC(t *testing.T) {
 	g1 := newNamedTestingGateway(t, "1")
 	defer g1.Close()
 
-	if err := g1.RPC("foo.com:123", "", nil); err == nil {
+	if err := g1.RPC("bar.com:123", "", nil); err == nil {
 		t.Fatal("RPC on unconnected peer succeeded")
 	}
 
@@ -200,25 +200,25 @@ func TestRPC(t *testing.T) {
 		if err != nil {
 			return err
 		} else if i == 0xdeadbeef {
-			return encoding.WriteObject(conn, "foo")
+			return encoding.WriteObject(conn, "bar")
 		} else {
 			return encoding.WriteObject(conn, "bar")
 		}
 	})
 
-	var foo string
+	var bar string
 	err = g1.RPC(g2.Address(), "Foo", func(conn modules.PeerConn) error {
 		err := encoding.WriteObject(conn, 0xdeadbeef)
 		if err != nil {
 			return err
 		}
-		return encoding.ReadObject(conn, &foo, 11)
+		return encoding.ReadObject(conn, &bar, 11)
 	})
 	if err != nil {
 		t.Fatal(err)
 	}
-	if foo != "foo" {
-		t.Fatal("Foo gave wrong response:", foo)
+	if bar != "bar" {
+		t.Fatal("Foo gave wrong response:", bar)
 	}
 
 	// wrong number should produce an error
@@ -227,13 +227,13 @@ func TestRPC(t *testing.T) {
 		if err != nil {
 			return err
 		}
-		return encoding.ReadObject(conn, &foo, 11)
+		return encoding.ReadObject(conn, &bar, 11)
 	})
 	if err != nil {
 		t.Fatal(err)
 	}
-	if foo != "bar" {
-		t.Fatal("Foo gave wrong response:", foo)
+	if bar != "bar" {
+		t.Fatal("Foo gave wrong response:", bar)
 	}
 
 	// don't read or write anything
@@ -271,7 +271,7 @@ func TestThreadedHandleConn(t *testing.T) {
 		if err != nil {
 			return err
 		} else if i == 0xdeadbeef {
-			return encoding.WriteObject(conn, "foo")
+			return encoding.WriteObject(conn, "bar")
 		} else {
 			return encoding.WriteObject(conn, "bar")
 		}
@@ -425,7 +425,7 @@ func TestBroadcast(t *testing.T) {
 	}
 
 	// Test that calling broadcast with nil peers does not broadcast to g2 or g3.
-	g1.Broadcast("Recv", "foo", nil)
+	g1.Broadcast("Recv", "bar", nil)
 	select {
 	case <-g2DoneChan:
 		t.Error("broadcast broadcasted to peers not in the peers arg")

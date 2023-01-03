@@ -3,7 +3,7 @@ package renter
 import (
 	"os"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 
 	"gitlab.com/NebulousLabs/errors"
 )

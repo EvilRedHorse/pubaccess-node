@@ -1,6 +1,6 @@
 package siatest
 
-import "gitlab.com/scpcorp/ScPrime/types"
+import "github.com/EvilRedHorse/pubaccess-node/types"
 
 // BlockHeight returns the node's consensus modules's synced block height.
 func (tn *TestNode) BlockHeight() (types.BlockHeight, error) {

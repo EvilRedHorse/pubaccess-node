@@ -3,7 +3,7 @@ package host
 import (
 	"net"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 type (

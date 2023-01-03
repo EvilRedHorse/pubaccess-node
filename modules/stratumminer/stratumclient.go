@@ -10,12 +10,12 @@ import (
 	"sync"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/encoding"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/encoding"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 
-	siasync "gitlab.com/scpcorp/ScPrime/sync"
+	siasync "github.com/EvilRedHorse/pubaccess-node/sync"
 )
 
 type stratumJob struct {

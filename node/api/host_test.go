@@ -11,11 +11,11 @@ import (
 	"testing"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/host/contractmanager"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/host/contractmanager"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 
 	"gitlab.com/NebulousLabs/errors"
 )
@@ -174,7 +174,7 @@ func TestHostSettingsHandlerParsing(t *testing.T) {
 
 	settings := st.host.InternalSettings()
 	settingsValues := url.Values{}
-	settingsValues.Set("maxdownloadbatchsize", "foo")
+	settingsValues.Set("maxdownloadbatchsize", "bar")
 	st.stdPostAPI("/host", settingsValues)
 	newSettings := st.host.InternalSettings()
 	if !reflect.DeepEqual(newSettings, settings) {
@@ -905,7 +905,7 @@ func TestRemoveStorageFolderError(t *testing.T) {
 
 	// Try removing a nonexistent folder.
 	removeValues := url.Values{}
-	removeValues.Set("path", "/foo/bar")
+	removeValues.Set("path", "/bar/bar")
 	err = st.stdPostAPI("/host/storage/folders/remove", removeValues)
 	if err == nil || err.Error() != errStorageFolderNotFound.Error() {
 		t.Fatalf("expected error %v, got %v", errStorageFolderNotFound, err)

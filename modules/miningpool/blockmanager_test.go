@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"gitlab.com/NebulousLabs/errors"
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 func TestBlockForWork(t *testing.T) {

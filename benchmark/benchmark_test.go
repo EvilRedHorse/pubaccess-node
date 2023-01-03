@@ -15,11 +15,11 @@ import (
 	"time"
 
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/node/api/client"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	"gitlab.com/scpcorp/ScPrime/siatest"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/node/api/client"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	"github.com/EvilRedHorse/pubaccess-node/siatest"
 )
 
 // Config
@@ -160,7 +160,7 @@ func TestSiaUploadsDownloads(t *testing.T) {
 
 	// Wait for uploads to finish. When we start massively downloading while
 	// uploads are in progress, uploads halt, because they have lower priority
-	// TODO: https://gitlab.com/scpcorp/ScPrime/-/issues/4242
+	// TODO: https://github.com/EvilRedHorse/pubaccess-node/-/issues/4242
 	// Once RHP is fully functioning, do not wait for all uploads finished,
 	// download concurrently with uploads
 	uploadWG.Wait()

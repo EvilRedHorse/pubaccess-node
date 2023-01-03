@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // HostRejectAllSessionLocks is a dependency injection for the host that will

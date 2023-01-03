@@ -12,8 +12,8 @@ import (
 	"sync"
 	"time"
 
-	//"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/types"
+	//"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 
 	"gitlab.com/NebulousLabs/threadgroup"
 )

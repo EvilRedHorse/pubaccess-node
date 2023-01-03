@@ -8,10 +8,10 @@ import (
 
 	"gitlab.com/NebulousLabs/errors"
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // TestStorageProof checks that the host can create and submit a storage proof.
@@ -59,7 +59,7 @@ func TestStorageProof(t *testing.T) {
 	const dataSize = 777
 	data := fastrand.Bytes(dataSize)
 	root := crypto.MerkleRoot(data)
-	err = ioutil.WriteFile(filepath.Join(ht.host.persistDir, "foo"), data, persist.DefaultDiskPermissionsTest)
+	err = ioutil.WriteFile(filepath.Join(ht.host.persistDir, "bar"), data, persist.DefaultDiskPermissionsTest)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -87,7 +87,7 @@ func TestStorageProof(t *testing.T) {
 			OriginTransaction: types.Transaction{
 				FileContracts: []types.FileContract{fc},
 			},
-			Path: filepath.Join(ht.host.persistDir, "foo"),
+			Path: filepath.Join(ht.host.persistDir, "bar"),
 		}
 		ht.host.obligationsByID[fcid] = obligation
 		ht.host.addActionItem(fc.WindowStart+1, obligation)

@@ -9,11 +9,11 @@ import (
 	"sync"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/config"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	siasync "gitlab.com/scpcorp/ScPrime/sync"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/config"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	siasync "github.com/EvilRedHorse/pubaccess-node/sync"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 const (

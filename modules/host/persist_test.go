@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // TestHostContractCountPersistence checks that the host persists its contract
@@ -77,7 +77,7 @@ func TestHostAddressPersistence(t *testing.T) {
 
 	// Set the address of the host.
 	settings := ht.host.InternalSettings()
-	settings.NetAddress = "foo.com:234"
+	settings.NetAddress = "bar.com:234"
 	err = ht.host.SetInternalSettings(settings)
 	if err != nil {
 		t.Fatal(err)
@@ -94,7 +94,7 @@ func TestHostAddressPersistence(t *testing.T) {
 	}
 
 	// Verify that the address persisted.
-	if ht.host.settings.NetAddress != "foo.com:234" {
+	if ht.host.settings.NetAddress != "bar.com:234" {
 		t.Error("User-set address does not seem to be persisting.")
 	}
 }

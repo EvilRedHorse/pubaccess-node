@@ -4,7 +4,7 @@ import (
 	"errors"
 	"sort"
 
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 var (

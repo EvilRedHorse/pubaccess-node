@@ -17,8 +17,8 @@ import (
 	"net/url"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // addStorageToAllHosts adds a storage folder with a bunch of storage to each

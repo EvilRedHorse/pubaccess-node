@@ -3,8 +3,8 @@ package siatest
 import (
 	"math"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // ConfirmedBalance returns the confirmed siacoin balance of the node's

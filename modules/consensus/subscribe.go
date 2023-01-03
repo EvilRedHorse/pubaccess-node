@@ -5,9 +5,9 @@ import (
 	"sync"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	siasync "gitlab.com/scpcorp/ScPrime/sync"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	siasync "github.com/EvilRedHorse/pubaccess-node/sync"
 
 	bolt "go.etcd.io/bbolt"
 )

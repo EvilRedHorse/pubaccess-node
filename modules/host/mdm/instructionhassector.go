@@ -4,8 +4,8 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // instructionHasSector is an instruction which returns whether the host stores

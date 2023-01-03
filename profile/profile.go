@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/persist"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
 )
 
 // There's a global lock on cpu and memory profiling, because I'm not sure what

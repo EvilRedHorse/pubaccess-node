@@ -3,7 +3,7 @@ package host
 import (
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // TestSaneDefaults verifies that the defaults satisfy the ratios

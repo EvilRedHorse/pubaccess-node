@@ -1,7 +1,7 @@
 package pool
 
 import (
-	"gitlab.com/scpcorp/ScPrime/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
 )
 
 //

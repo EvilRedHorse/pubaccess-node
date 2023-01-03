@@ -5,7 +5,7 @@ import (
 
 	"gitlab.com/NebulousLabs/log"
 
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 // Logger is a wrapper for the standard library logger that enforces logging

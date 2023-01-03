@@ -5,9 +5,9 @@ import (
 	"text/template"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules/host/tokenstorage"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules/host/tokenstorage"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 //go:generate go run ./gen/...

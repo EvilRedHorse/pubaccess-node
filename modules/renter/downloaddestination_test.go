@@ -3,7 +3,7 @@ package renter
 import (
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem/siafile"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem/siafile"
 )
 
 // TestWritePiecesPanic is a regression test that ensures WritePieces does not

@@ -9,8 +9,8 @@ import (
 	"net/http"
 	"strings"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/node/api"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/node/api"
 
 	"gitlab.com/NebulousLabs/errors"
 )

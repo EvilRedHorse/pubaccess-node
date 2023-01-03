@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // TestLimitStreamer verifies the limit streamer properly returns the data

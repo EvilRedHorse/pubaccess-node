@@ -4,7 +4,7 @@ import (
 	"net/url"
 	"strconv"
 
-	"gitlab.com/scpcorp/ScPrime/node/api"
+	"github.com/EvilRedHorse/pubaccess-node/node/api"
 )
 
 // DaemonGlobalRateLimitPost uses the /daemon/settings endpoint to change the

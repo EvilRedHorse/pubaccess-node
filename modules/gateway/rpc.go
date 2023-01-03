@@ -7,8 +7,8 @@ import (
 
 	"gitlab.com/NebulousLabs/encoding"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // rpcID is an 8-byte signature that is added to all RPCs to tell the gatway

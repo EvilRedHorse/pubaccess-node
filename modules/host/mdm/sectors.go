@@ -3,8 +3,8 @@ package mdm
 import (
 	"fmt"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // sectors contains the program cache, including gained and removed sectors as

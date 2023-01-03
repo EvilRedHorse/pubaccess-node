@@ -19,20 +19,20 @@ import (
 	"time"
 
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/host/contractmanager"
-	"gitlab.com/scpcorp/ScPrime/modules/renter"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/contractor"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/proto"
-	"gitlab.com/scpcorp/ScPrime/node"
-	"gitlab.com/scpcorp/ScPrime/node/api"
-	"gitlab.com/scpcorp/ScPrime/node/api/client"
-	"gitlab.com/scpcorp/ScPrime/persist"
-	"gitlab.com/scpcorp/ScPrime/siatest"
-	"gitlab.com/scpcorp/ScPrime/siatest/dependencies"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/host/contractmanager"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/contractor"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/proto"
+	"github.com/EvilRedHorse/pubaccess-node/node"
+	"github.com/EvilRedHorse/pubaccess-node/node/api"
+	"github.com/EvilRedHorse/pubaccess-node/node/api/client"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
+	"github.com/EvilRedHorse/pubaccess-node/siatest"
+	"github.com/EvilRedHorse/pubaccess-node/siatest/dependencies"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // TestRenterOne executes a number of subtests using the same TestGroup to save
@@ -3719,7 +3719,7 @@ func TestSiafileCompatCodeV140(t *testing.T) {
 		t.Fatal(err)
 	}
 	// Add a dummy snapshot and siafile to their corresponding folder.
-	dummySiafile := "foo.sia"
+	dummySiafile := "bar.sia"
 	dummySnapshot := "bar.sia"
 	var f *os.File
 	var err error
@@ -4004,7 +4004,7 @@ func testValidateSiaPath(t *testing.T, tg *siatest.TestGroup) {
 		{"valid/path../test", true},
 		{"test/path", true},
 		{"/leading/slash", false}, // this is not valid through the api because a leading slash is added by the api call so this turns into 2 leading slashes
-		{"foo/./bar", false},
+		{"bar/./bar", false},
 		{"", false},
 		{"blank/end/", true}, // clean will trim trailing slashes so this is a valid input
 		{"double//dash", false},

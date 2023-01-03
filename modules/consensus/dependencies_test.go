@@ -1,6 +1,6 @@
 package consensus
 
-import "gitlab.com/scpcorp/ScPrime/modules"
+import "github.com/EvilRedHorse/pubaccess-node/modules"
 
 type (
 	// dependencySleepAfterInitializeSubscribe is a dependency used to make the consensusSet sleep for a few seconds after calling managedInitializeSubscribe.

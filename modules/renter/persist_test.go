@@ -7,10 +7,10 @@ import (
 	"path/filepath"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem/siafile"
-	"gitlab.com/scpcorp/ScPrime/siatest/dependencies"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem/siafile"
+	"github.com/EvilRedHorse/pubaccess-node/siatest/dependencies"
 
 	"gitlab.com/NebulousLabs/fastrand"
 	"gitlab.com/NebulousLabs/ratelimit"
@@ -145,19 +145,19 @@ func TestRenterPaths(t *testing.T) {
 
 	// Create and save some files.
 	// The result of saving these files should be a directory containing:
-	//   foo.sia
-	//   foo/bar.sia
-	//   foo/bar/baz.sia
+	//   bar.sia
+	//   bar/bar.sia
+	//   bar/bar/baz.sia
 
-	siaPath1, err := modules.NewSiaPath("foo")
+	siaPath1, err := modules.NewSiaPath("bar")
 	if err != nil {
 		t.Fatal(err)
 	}
-	siaPath2, err := modules.NewSiaPath("foo/bar")
+	siaPath2, err := modules.NewSiaPath("bar/bar")
 	if err != nil {
 		t.Fatal(err)
 	}
-	siaPath3, err := modules.NewSiaPath("foo/bar/baz")
+	siaPath3, err := modules.NewSiaPath("bar/bar/baz")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -231,7 +231,7 @@ func TestRenterPaths(t *testing.T) {
 		walkStr += rel
 		return nil
 	})
-	// walk will descend into foo/bar/, reading baz, bar, and finally foo
+	// walk will descend into bar/bar/, reading baz, bar, and finally bar
 	sfs := rt.renter.staticFileSystem
 	expWalkStr := (sfs.FileSiaPath(entry3).String() + ".sia") + (sfs.FileSiaPath(entry2).String() + ".sia") + (sfs.FileSiaPath(entry1).String() + ".sia")
 	if filepath.ToSlash(walkStr) != expWalkStr {

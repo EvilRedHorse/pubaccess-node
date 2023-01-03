@@ -1,6 +1,6 @@
 package consensus
 
-import "gitlab.com/scpcorp/ScPrime/modules"
+import "github.com/EvilRedHorse/pubaccess-node/modules"
 
 // Alerts implements the Alerter interface for the consensusset.
 func (c *ConsensusSet) Alerts() (crit, err, warn []modules.Alert) {

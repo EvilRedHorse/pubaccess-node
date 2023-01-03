@@ -3,7 +3,7 @@ package client
 import (
 	"net/url"
 
-	"gitlab.com/scpcorp/ScPrime/node/api"
+	"github.com/EvilRedHorse/pubaccess-node/node/api"
 )
 
 // MiningPoolGet requests the /pool endpoint's resources.
@@ -34,13 +34,13 @@ func (c *Client) MiningPoolClientsGet() (clientInfos api.MiningPoolClientsInfo, 
 }
 
 /*
-// MiningPoolClientGet requests /pool/client?name=foo to retrieve info about one client.
+// MiningPoolClientGet requests /pool/client?name=bar to retrieve info about one client.
 func (c *Client) MiningPoolClientGet(name string) (clientInfo api.MiningPoolClientInfo, err error) {
 	err = c.get("/pool/client?name="+name, &clientInfo)
 	return
 }
 
-// MiningPoolTransactionsGet requests /pool/clienttx?name=foo to retrieve transaction info about one client.
+// MiningPoolTransactionsGet requests /pool/clienttx?name=bar to retrieve transaction info about one client.
 func (c *Client) MiningPoolTransactionsGet(name string) (txs []api.MiningPoolClientTransactions, err error) {
 	err = c.get("/pool/clienttx?name="+name, &txs)
 	return
@@ -52,7 +52,7 @@ func (c *Client) MiningPoolBlocksGet() (blockInfos []api.MiningPoolBlockInfo, er
 	return
 }
 
-// MiningPoolBlockGet requests the /pool/block?block=foo block info for a given client..
+// MiningPoolBlockGet requests the /pool/block?block=bar block info for a given client..
 // TODO this API seems poorly named
 func (c *Client) MiningPoolBlockGet(name string) (blockInfo []api.MiningPoolBlockClientInfo, err error) {
 	err = c.get("/pool/block?block="+name, &blockInfo)

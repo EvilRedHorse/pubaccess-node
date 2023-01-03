@@ -11,7 +11,7 @@ import (
 	"gitlab.com/NebulousLabs/fastrand"
 	"gitlab.com/scpcorp/writeaheadlog"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // equalMetadatas is a helper that compares two siaDirMetadatas. If using this

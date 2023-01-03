@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/spf13/cobra"
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 // TestRootSiacCmd tests root siac command for expected outputs. The test

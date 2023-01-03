@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 
 	"gitlab.com/NebulousLabs/errors"
-	"gitlab.com/scpcorp/ScPrime/persist"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
 )
 
 const (

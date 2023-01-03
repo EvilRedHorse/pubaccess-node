@@ -9,9 +9,9 @@ import (
 	"net/url"
 	"strconv"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/node/api"
-	"gitlab.com/scpcorp/ScPrime/pubaccesskey"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/node/api"
+	"github.com/EvilRedHorse/pubaccess-node/pubaccesskey"
 
 	"gitlab.com/NebulousLabs/errors"
 )

@@ -1,7 +1,7 @@
 package siatest
 
 import (
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 type (

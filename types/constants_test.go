@@ -3,7 +3,7 @@ package types
 import (
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 // TestCheckBuildConstants checks that the required build constants have been

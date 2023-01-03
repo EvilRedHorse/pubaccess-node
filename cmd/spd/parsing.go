@@ -4,7 +4,7 @@ import (
 	"strings"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/node"
+	"github.com/EvilRedHorse/pubaccess-node/node"
 )
 
 // createNodeParams parses the provided config and creates the corresponding

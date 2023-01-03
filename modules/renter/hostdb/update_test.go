@@ -3,9 +3,9 @@ package hostdb
 import (
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // makeSignedAnnouncement creates a []byte that contains an encoded and signed
@@ -21,7 +21,7 @@ func makeSignedAnnouncement(na modules.NetAddress) ([]byte, error) {
 
 // TestFindHostAnnouncements probes the findHostAnnouncements function
 func TestFindHostAnnouncements(t *testing.T) {
-	annBytes, err := makeSignedAnnouncement("foo.com:1234")
+	annBytes, err := makeSignedAnnouncement("bar.com:1234")
 	if err != nil {
 		t.Fatal(err)
 	}

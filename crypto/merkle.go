@@ -4,7 +4,7 @@ import (
 	"bytes"
 
 	"gitlab.com/NebulousLabs/encoding"
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 	"gitlab.com/scpcorp/merkletree/merkletree-blake"
 )
 

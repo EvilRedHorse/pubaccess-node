@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // TestStuckStack probes the implementation of the stuck stack

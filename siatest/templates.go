@@ -1,6 +1,6 @@
 package siatest
 
-import "gitlab.com/scpcorp/ScPrime/node"
+import "github.com/EvilRedHorse/pubaccess-node/node"
 
 var (
 	// MinerTemplate is a template for a ScPrime node that has a functioning

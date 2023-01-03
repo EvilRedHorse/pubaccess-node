@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 const (

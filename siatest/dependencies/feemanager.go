@@ -3,8 +3,8 @@ package dependencies
 import (
 	"sync"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // DependencyCustomNebulousAddress will use a custom address for the Nebulous

@@ -7,16 +7,16 @@ import (
 	"gitlab.com/NebulousLabs/errors"
 	"gitlab.com/NebulousLabs/ratelimit"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/consensus"
-	"gitlab.com/scpcorp/ScPrime/modules/gateway"
-	"gitlab.com/scpcorp/ScPrime/modules/miner"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/hostdb"
-	"gitlab.com/scpcorp/ScPrime/modules/transactionpool"
-	modWallet "gitlab.com/scpcorp/ScPrime/modules/wallet" // name conflicts with type
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/consensus"
+	"github.com/EvilRedHorse/pubaccess-node/modules/gateway"
+	"github.com/EvilRedHorse/pubaccess-node/modules/miner"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/hostdb"
+	"github.com/EvilRedHorse/pubaccess-node/modules/transactionpool"
+	modWallet "github.com/EvilRedHorse/pubaccess-node/modules/wallet" // name conflicts with type
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // contractorTester contains all of the modules that are used while testing the contractor.

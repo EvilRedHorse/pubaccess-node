@@ -8,7 +8,7 @@ import (
 	"sync"
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/build"
+	"github.com/EvilRedHorse/pubaccess-node/build"
 )
 
 // TestSaveLoadJSON creates a simple object and then tries saving and loading

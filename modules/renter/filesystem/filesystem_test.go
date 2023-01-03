@@ -14,12 +14,12 @@ import (
 	"testing"
 	"time"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem/siadir"
-	"gitlab.com/scpcorp/ScPrime/modules/renter/filesystem/siafile"
-	"gitlab.com/scpcorp/ScPrime/persist"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem/siadir"
+	"github.com/EvilRedHorse/pubaccess-node/modules/renter/filesystem/siafile"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
 	"gitlab.com/scpcorp/writeaheadlog"
 
 	"gitlab.com/NebulousLabs/errors"
@@ -164,8 +164,8 @@ func TestNewSiaDir(t *testing.T) {
 	// Create filesystem.
 	root := filepath.Join(testDir(t.Name()), "fs-root")
 	fs := newTestFileSystem(root)
-	// Create dir /sub/foo
-	sp := newSiaPath("sub/foo")
+	// Create dir /sub/bar
+	sp := newSiaPath("sub/bar")
 	if err := fs.NewSiaDir(sp, modules.DefaultDirPerm); err != nil {
 		t.Fatal(err)
 	}
@@ -185,8 +185,8 @@ func TestNewSiaFile(t *testing.T) {
 	// Create filesystem.
 	root := filepath.Join(testDir(t.Name()), "fs-root")
 	fs := newTestFileSystem(root)
-	// Create file /sub/foo/file
-	sp := newSiaPath("sub/foo/file")
+	// Create file /sub/bar/file
+	sp := newSiaPath("sub/bar/file")
 	fs.addTestSiaFile(sp)
 	if err := fs.NewSiaDir(sp, modules.DefaultDirPerm); err != ErrExists {
 		t.Fatal("err should be ErrExists but was", err)
@@ -234,19 +234,19 @@ func TestOpenSiaDir(t *testing.T) {
 	// Create filesystem.
 	root := filepath.Join(testDir(t.Name()), "fs-root")
 	fs := newTestFileSystem(root)
-	// Create dir /foo
-	sp := newSiaPath("foo")
+	// Create dir /bar
+	sp := newSiaPath("bar")
 	if err := fs.NewSiaDir(sp, modules.DefaultDirPerm); err != nil {
 		t.Fatal(err)
 	}
 	// Open the newly created dir.
-	foo, err := fs.OpenSiaDir(sp)
+	bar, err := fs.OpenSiaDir(sp)
 	if err != nil {
 		t.Fatal(err)
 	}
-	defer foo.Close()
-	// Create dir /sub/foo
-	sp = newSiaPath("sub/foo")
+	defer bar.Close()
+	// Create dir /sub/bar
+	sp = newSiaPath("sub/bar")
 	if err := fs.NewSiaDir(sp, modules.DefaultDirPerm); err != nil {
 		t.Fatal(err)
 	}
@@ -282,18 +282,18 @@ func TestOpenSiaDir(t *testing.T) {
 	if err := subNode.checkNode(0, 1, 0); err != nil {
 		t.Fatal(err)
 	}
-	// Confirm the integrity of the /sub/foo node.
-	fooNode, exists := subNode.directories["foo"]
+	// Confirm the integrity of the /sub/bar node.
+	barNode, exists := subNode.directories["bar"]
 	if !exists {
-		t.Fatal("expected /sub to contain /sub/foo")
+		t.Fatal("expected /sub to contain /sub/bar")
 	}
-	if *fooNode.name != "foo" {
-		t.Fatalf("fooNode name should be 'foo' but was %v", *fooNode.name)
+	if *barNode.name != "bar" {
+		t.Fatalf("barNode name should be 'bar' but was %v", *barNode.name)
 	}
-	if path := filepath.Join(*fooNode.parent.path, *fooNode.name); path != *fooNode.path {
-		t.Fatalf("fooNode path should be %v but was %v", path, *fooNode.path)
+	if path := filepath.Join(*barNode.parent.path, *barNode.name); path != *barNode.path {
+		t.Fatalf("barNode path should be %v but was %v", path, *barNode.path)
 	}
-	if err := fooNode.checkNode(1, 0, 0); err != nil {
+	if err := barNode.checkNode(1, 0, 0); err != nil {
 		t.Fatal(err)
 	}
 	// Open the newly created dir again.
@@ -434,8 +434,8 @@ func TestCloseSiaDir(t *testing.T) {
 	// Create filesystem.
 	root := filepath.Join(testDir(t.Name()), "fs-root")
 	fs := newTestFileSystem(root)
-	// Create dir /sub/foo
-	sp := newSiaPath("sub1/foo")
+	// Create dir /sub/bar
+	sp := newSiaPath("sub1/bar")
 	if err := fs.NewSiaDir(sp, modules.DefaultDirPerm); err != nil {
 		t.Fatal(err)
 	}
@@ -606,7 +606,7 @@ func TestDeleteFile(t *testing.T) {
 	root := filepath.Join(testDir(t.Name()), "fs-root")
 	fs := newTestFileSystem(root)
 	// Add a file to the root dir.
-	sp := newSiaPath("foo")
+	sp := newSiaPath("bar")
 	fs.addTestSiaFile(sp)
 	// Open the file.
 	sf, err := fs.OpenSiaFile(sp)
@@ -615,7 +615,7 @@ func TestDeleteFile(t *testing.T) {
 	}
 	// File shouldn't be deleted yet.
 	if sf.Deleted() {
-		t.Fatal("foo is deleted before calling delete")
+		t.Fatal("bar is deleted before calling delete")
 	}
 	// Delete it using the filesystem.
 	if err := fs.DeleteFile(sp); err != nil {
@@ -623,9 +623,9 @@ func TestDeleteFile(t *testing.T) {
 	}
 	// Check that the open instance is marked as deleted.
 	if !sf.Deleted() {
-		t.Fatal("foo should be marked as deleted but wasn't")
+		t.Fatal("bar should be marked as deleted but wasn't")
 	}
-	// Check that we can't open another instance of foo and that we can't create
+	// Check that we can't open another instance of bar and that we can't create
 	// a new file at the same path.
 	if _, err := fs.OpenSiaFile(sp); err != ErrNotExist {
 		t.Fatal("err should be ErrNotExist but was:", err)
@@ -646,11 +646,11 @@ func TestDeleteDirectory(t *testing.T) {
 	root := filepath.Join(testDir(t.Name()), "fs-root")
 	fs := newTestFileSystem(root)
 	// Add some files.
-	fs.addTestSiaFile(newSiaPath("dir/foo/bar/file1"))
-	fs.addTestSiaFile(newSiaPath("dir/foo/bar/file2"))
-	fs.addTestSiaFile(newSiaPath("dir/foo/bar/file3"))
-	// Delete "foo"
-	if err := fs.DeleteDir(newSiaPath("/dir/foo")); err != nil {
+	fs.addTestSiaFile(newSiaPath("dir/bar/bar/file1"))
+	fs.addTestSiaFile(newSiaPath("dir/bar/bar/file2"))
+	fs.addTestSiaFile(newSiaPath("dir/bar/bar/file3"))
+	// Delete "bar"
+	if err := fs.DeleteDir(newSiaPath("/dir/bar")); err != nil {
 		t.Fatal(err)
 	}
 	// Check that /dir still exists.
@@ -678,28 +678,28 @@ func TestRenameFile(t *testing.T) {
 	root := filepath.Join(testDir(t.Name()), "fs-root")
 	fs := newTestFileSystem(root)
 	// Add a file to the root dir.
-	foo := newSiaPath("foo")
-	foobar := newSiaPath("foobar")
-	barfoo := newSiaPath("bar/foo")
-	fs.addTestSiaFile(foo)
+	bar := newSiaPath("bar")
+	barbar := newSiaPath("barbar")
+	barbar := newSiaPath("bar/bar")
+	fs.addTestSiaFile(bar)
 	// Rename the file.
-	if err := fs.RenameFile(foo, foobar); err != nil {
+	if err := fs.RenameFile(bar, barbar); err != nil {
 		t.Fatal(err)
 	}
 	// Check if the file was renamed.
-	if _, err := fs.OpenSiaFile(foo); err != ErrNotExist {
+	if _, err := fs.OpenSiaFile(bar); err != ErrNotExist {
 		t.Fatal("expected ErrNotExist but got:", err)
 	}
-	sf, err := fs.OpenSiaFile(foobar)
+	sf, err := fs.OpenSiaFile(barbar)
 	if err != nil {
 		t.Fatal("expected ErrNotExist but got:", err)
 	}
 	sf.Close()
 	// Rename the file again. This time it changes to a non-existent folder.
-	if err := fs.RenameFile(foobar, barfoo); err != nil {
+	if err := fs.RenameFile(barbar, barbar); err != nil {
 		t.Fatal(err)
 	}
-	sf, err = fs.OpenSiaFile(barfoo)
+	sf, err = fs.OpenSiaFile(barbar)
 	if err != nil {
 		t.Fatal("expected ErrNotExist but got:", err)
 	}
@@ -1942,40 +1942,40 @@ func TestLazySiaDir(t *testing.T) {
 	// Create filesystem.
 	root := filepath.Join(testDir(t.Name()), "fs-root")
 	fs := newTestFileSystem(root)
-	// Create dir /foo
-	sp := newSiaPath("foo")
+	// Create dir /bar
+	sp := newSiaPath("bar")
 	if err := fs.NewSiaDir(sp, modules.DefaultDirPerm); err != nil {
 		t.Fatal(err)
 	}
 	// Open the newly created dir.
-	foo, err := fs.OpenSiaDir(sp)
+	bar, err := fs.OpenSiaDir(sp)
 	if err != nil {
 		t.Fatal(err)
 	}
-	defer foo.Close()
+	defer bar.Close()
 	// Get the siadir.
-	sd, err := foo.siaDir()
+	sd, err := bar.siaDir()
 	if err != nil {
 		t.Fatal(err)
 	}
 	// Lazydir should be set.
-	if *foo.lazySiaDir != sd {
+	if *bar.lazySiaDir != sd {
 		t.Fatal(err)
 	}
-	// Fetching foo from root should also have lazydir set.
-	fooRoot := fs.directories["foo"]
-	if *fooRoot.lazySiaDir != sd {
-		t.Fatal("fooRoot doesn't have lazydir set")
+	// Fetching bar from root should also have lazydir set.
+	barRoot := fs.directories["bar"]
+	if *barRoot.lazySiaDir != sd {
+		t.Fatal("barRoot doesn't have lazydir set")
 	}
-	// Open foo again.
-	foo2, err := fs.OpenSiaDir(sp)
+	// Open bar again.
+	bar2, err := fs.OpenSiaDir(sp)
 	if err != nil {
 		t.Fatal(err)
 	}
-	defer foo2.Close()
+	defer bar2.Close()
 	// Lazydir should already be loaded.
-	if *foo2.lazySiaDir != sd {
-		t.Fatal("foo2.lazySiaDir isn't set correctly", foo2.lazySiaDir)
+	if *bar2.lazySiaDir != sd {
+		t.Fatal("bar2.lazySiaDir isn't set correctly", bar2.lazySiaDir)
 	}
 }
 
@@ -2015,21 +2015,21 @@ func TestFailedOpenFileFolder(t *testing.T) {
 	if err := fs.NewSiaDir(sp, modules.DefaultDirPerm); err != nil {
 		t.Fatal(err)
 	}
-	// Prepare a path to "foo"
-	foo, err := sp.Join("foo")
+	// Prepare a path to "bar"
+	bar, err := sp.Join("bar")
 	if err != nil {
 		t.Fatal(err)
 	}
-	// Open "foo" as a dir.
-	_, err = fs.OpenSiaDir(foo)
+	// Open "bar" as a dir.
+	_, err = fs.OpenSiaDir(bar)
 	if err != ErrNotExist {
 		t.Fatal("err should be ErrNotExist but was", err)
 	}
 	if len(fs.files) != 0 || len(fs.directories) != 0 {
 		t.Fatal("Expected 0 files and folders but got", len(fs.files), len(fs.directories))
 	}
-	// Open "foo" as a file.
-	_, err = fs.OpenSiaFile(foo)
+	// Open "bar" as a file.
+	_, err = fs.OpenSiaFile(bar)
 	if err != ErrNotExist {
 		t.Fatal("err should be ErrNotExist but was", err)
 	}

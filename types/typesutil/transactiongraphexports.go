@@ -3,7 +3,7 @@ package typesutil
 import (
 	"fmt"
 
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 
 	"gitlab.com/NebulousLabs/errors"
 )

@@ -55,7 +55,7 @@ package gateway
 // time, the attacked node should already have its set of outbound peers,
 // limiting the amount of damage that the attacker can do.
 //
-// To limit DNS-based tomfoolry, nodes are only added to the nodelist if their
+// To limit DNS-based tombarlry, nodes are only added to the nodelist if their
 // connection information takes the form of an IP address.
 //
 // Some research has been done on Bitcoin's flood networks. The more relevant
@@ -105,8 +105,8 @@ import (
 	"gitlab.com/NebulousLabs/ratelimit"
 	"gitlab.com/NebulousLabs/threadgroup"
 
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/persist"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
 )
 
 var errNoPeers = errors.New("no peers")

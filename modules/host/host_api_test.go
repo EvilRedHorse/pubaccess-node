@@ -9,10 +9,10 @@ import (
 	"time"
 
 	"gitlab.com/NebulousLabs/fastrand"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/modules/host/api"
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules/host/api"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 func updateRevisionOutputs(rev *types.FileContractRevision, cost, collateral types.Currency) {

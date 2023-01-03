@@ -3,7 +3,7 @@ package api
 import (
 	"testing"
 
-	"gitlab.com/scpcorp/ScPrime/types"
+	"github.com/EvilRedHorse/pubaccess-node/types"
 )
 
 // TestIntegrationExplorerGET probes the GET call to /explorer.

@@ -8,7 +8,7 @@ import (
 
 	"github.com/sasha-s/go-deadlock"
 
-	"gitlab.com/scpcorp/ScPrime/persist"
+	"github.com/EvilRedHorse/pubaccess-node/persist"
 )
 
 // Dispatcher contains a map of ip addresses to handlers

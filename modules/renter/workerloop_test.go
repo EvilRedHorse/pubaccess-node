@@ -7,8 +7,8 @@ import (
 	"time"
 	"unsafe"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // dependencyTestJobSerialExecution is a special dependency to change the

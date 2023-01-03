@@ -11,12 +11,12 @@ import (
 	"gitlab.com/NebulousLabs/errors"
 	"gitlab.com/NebulousLabs/fastrand"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/crypto"
-	"gitlab.com/scpcorp/ScPrime/modules"
-	"gitlab.com/scpcorp/ScPrime/node"
-	"gitlab.com/scpcorp/ScPrime/siatest"
-	"gitlab.com/scpcorp/ScPrime/siatest/dependencies"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/crypto"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
+	"github.com/EvilRedHorse/pubaccess-node/node"
+	"github.com/EvilRedHorse/pubaccess-node/siatest"
+	"github.com/EvilRedHorse/pubaccess-node/siatest/dependencies"
 )
 
 // TestRenterDownloadStreamCache checks that the download stream caching is
@@ -314,7 +314,7 @@ func testUploadStreaming(t *testing.T, tg *siatest.TestGroup) {
 	d := bytes.NewReader(data)
 
 	// Upload the data.
-	siaPath, err := modules.NewSiaPath("/foo")
+	siaPath, err := modules.NewSiaPath("/bar")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -377,7 +377,7 @@ func testUploadStreamingWithBadDeps(t *testing.T, tg *siatest.TestGroup) {
 	d := bytes.NewReader(data)
 
 	// Upload the data.
-	siaPath, err := modules.NewSiaPath("/foo")
+	siaPath, err := modules.NewSiaPath("/bar")
 	if err != nil {
 		t.Fatal(err)
 	}

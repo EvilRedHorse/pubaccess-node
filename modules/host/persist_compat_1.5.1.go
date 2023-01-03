@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 
 	"gitlab.com/NebulousLabs/errors"
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // upgradeFromV143ToV151 is an upgrade layer that fixes a bug in the host's

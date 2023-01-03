@@ -6,8 +6,8 @@ import (
 
 	"gitlab.com/NebulousLabs/monitor"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/modules"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/modules"
 )
 
 // peerConn is a simple type that implements the modules.PeerConn interface.
