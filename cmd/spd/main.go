@@ -6,8 +6,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"gitlab.com/scpcorp/ScPrime/build"
-	"gitlab.com/scpcorp/ScPrime/config"
+	"github.com/EvilRedHorse/pubaccess-node/build"
+	"github.com/EvilRedHorse/pubaccess-node/config"
 )
 
 var (
@@ -67,13 +67,13 @@ func die(args ...interface{}) {
 func versionCmd(*cobra.Command, []string) {
 	switch build.Release {
 	case "dev":
-		fmt.Println("ScPrime Daemon v" + build.Version + "-dev")
+		fmt.Println("pubaccess-node v" + build.Version + "-dev")
 	case "standard":
-		fmt.Println("ScPrime Daemon v" + build.Version)
+		fmt.Println("pubaccess-node v" + build.Version)
 	case "testing":
-		fmt.Println("ScPrime Daemon v" + build.Version + "-testing")
+		fmt.Println("pubaccess-node v" + build.Version + "-testing")
 	default:
-		fmt.Println("ScPrime Daemon v" + build.Version + "-???")
+		fmt.Println("pubaccess-node v" + build.Version + "-???")
 	}
 }
 
@@ -157,15 +157,15 @@ func main() {
 	}
 	root := &cobra.Command{
 		Use:   os.Args[0],
-		Short: "ScPrime Daemon v" + build.Version,
-		Long:  "ScPrime Daemon v" + build.Version,
+		Short: "pubaccess-node v" + build.Version,
+		Long:  "pubaccess-node v" + build.Version,
 		Run:   startDaemonCmd,
 	}
 
 	root.AddCommand(&cobra.Command{
 		Use:   "version",
 		Short: "Print version information",
-		Long:  "Print version information about the ScPrime Daemon",
+		Long:  "Print version information about the pubaccess-node",
 		Run:   versionCmd,
 	})
 
@@ -181,13 +181,13 @@ func main() {
 	root.Flags().StringVarP(&globalConfig.Spd.HostAddr, "host-addr", "", ":4282", "which port the host listens on")
 	root.Flags().StringVarP(&globalConfig.Spd.ProfileDir, "profile-directory", "", "profiles", "location of the profiling directory")
 	root.Flags().StringVarP(&globalConfig.Spd.APIaddr, "api-addr", "", "localhost:4280", "which host:port the API server listens on")
-	root.Flags().StringVarP(&globalConfig.Spd.DataDir, "scprime-directory", "d", "", "location of the scprime daemon metadata directory")
+	root.Flags().StringVarP(&globalConfig.Spd.DataDir, "scprime-directory", "d", "", "location of the pubaccess-node metadata directory")
 	root.Flags().BoolVarP(&globalConfig.Spd.NoBootstrap, "no-bootstrap", "", false, "disable bootstrapping on this run")
 	root.Flags().StringVarP(&globalConfig.Spd.Profile, "profile", "", "", "enable profiling with flags 'cmt' for CPU, memory, trace")
 	root.Flags().StringVarP(&globalConfig.Spd.RPCaddr, "rpc-addr", "", ":4281", "which port the gateway listens on")
-	root.Flags().StringVarP(&globalConfig.Spd.SiaMuxTCPAddr, "siamux-addr", "", ":4283", "which port the SiaMux listens on")
+	root.Flags().StringVarP(&globalConfig.Spd.SiaMuxTCPAddr, "siamux-addr", "", ":4285", "which port the SiaMux listens on")
 	root.Flags().StringVarP(&globalConfig.Spd.SiaMuxWSAddr, "siamux-addr-ws", "", ":4284", "which port the SiaMux websocket listens on")
-	root.Flags().StringVarP(&globalConfig.Spd.HostApiAddr, "host-api-addr", "", ":4285", "which port the Host API listens on")
+	root.Flags().StringVarP(&globalConfig.Spd.HostApiAddr, "host-api-addr", "", ":4283", "which port the Host API listens on")
 	root.Flags().StringVarP(&globalConfig.Spd.Modules, "modules", "M", "gctwrh", "enabled modules, see 'spd modules' for more info")
 	root.Flags().BoolVarP(&globalConfig.Spd.AuthenticateAPI, "authenticate-api", "", true, "enable API password protection")
 	root.Flags().BoolVarP(&globalConfig.Spd.TempPassword, "temp-password", "", false, "enter a temporary API password during startup")
@@ -214,7 +214,7 @@ func main() {
 				err = os.Rename(oldpath, targetpath)
 				if err != nil {
 					//Panic, there is old metadata at the old default path but it can not be moved.
-					die("Can not move existing old SiaPrime metadata directory to new default path", err)
+					die("Can not move existing old SiaPrime metadata directory to new default path for pubaccess-node", err)
 				} else {
 					fmt.Printf("Done moving data from %v to %v\n", oldpath, targetpath)
 				}
