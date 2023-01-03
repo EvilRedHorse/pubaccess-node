@@ -7,7 +7,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/EvilRedHorse/pubaccess-node/types"
+	"gitlab.com/scpcorp/ScPrime/types"
 )
 
 var (
