@@ -6,8 +6,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/EvilRedHorse/pubaccess-node/build"
-	"github.com/EvilRedHorse/pubaccess-node/config"
+	"gitlab.com/scpcorp/ScPrime/build"
+	"gitlab.com/scpcorp/ScPrime/config"
 )
 
 var (
