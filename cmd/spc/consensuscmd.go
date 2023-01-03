@@ -7,8 +7,8 @@ import (
 	"github.com/spf13/cobra"
 	"gitlab.com/NebulousLabs/errors"
 
-	"github.com/EvilRedHorse/pubaccess-node/node/api"
-	"github.com/EvilRedHorse/pubaccess-node/types"
+	"gitlab.com/scpcorp/ScPrime/node/api"
+	"gitlab.com/scpcorp/ScPrime/types"
 )
 
 var (
