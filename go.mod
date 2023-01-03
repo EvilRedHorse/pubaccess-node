@@ -1,4 +1,4 @@
-module gitlab.com/scpcorp/ScPrime
+module github.com/EvilRedHorse/pubaccess-node
 
 go 1.16
 
