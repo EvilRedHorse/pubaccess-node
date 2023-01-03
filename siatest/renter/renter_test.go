@@ -10,6 +10,7 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
+	"runtime"
 	"sort"
 	"strconv"
 	"strings"
@@ -1417,9 +1418,9 @@ func testCancelAsyncDownload(t *testing.T, tg *siatest.TestGroup) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	// Sometimes wait a second to not always cancel the download right
+	// Sometimes wait; to not always cancel the download right
 	// away.
-	time.Sleep(time.Second * time.Duration(fastrand.Intn(2)))
+	runtime.Gosched()
 	// Cancel the download.
 	if err := renter.RenterCancelDownloadPost(cancelID); err != nil {
 		t.Fatal(err)
@@ -2410,9 +2411,9 @@ func testOverspendAllowance(t *testing.T, tg *siatest.TestGroup) {
 	}
 	renter := nodes[0]
 
-	// Set the allowance with only 1SCP
+	// Set the allowance
 	allowance := siatest.DefaultAllowance
-	allowance.Funds = types.ScPrimecoinPrecision.Mul64(1)
+	allowance.Funds = types.ScPrimecoinPrecision.Div64(2)
 	if err := renter.RenterPostAllowance(allowance); err != nil {
 		t.Fatal(err)
 	}
